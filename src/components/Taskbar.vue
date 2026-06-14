@@ -70,23 +70,10 @@ onBeforeUnmount(() => {
       </div>
 
       <!-- Vertical divider -->
-      <div class="h-[20px] w-[1px] bg-[#1a44a7] shadow-[1px_0_0_#2b69ee] mx-1"></div>
-
-      <!-- Quick Launch Placeholder (Retro style) -->
-      <div class="hidden md:flex items-center gap-1.5 px-1">
-        <div class="w-5 h-5 flex items-center justify-center hover:bg-white/10 rounded cursor-pointer" @click="emit('task-click', 'computer')">
-          <img src="/assets/icons/computer.png" alt="Poste" class="w-4 h-4 object-contain" />
-        </div>
-        <div class="w-5 h-5 flex items-center justify-center hover:bg-white/10 rounded cursor-pointer" @click="emit('task-click', 'projects')">
-          <img src="/assets/icons/folder_documents.png" alt="Projets" class="w-4 h-4 object-contain" />
-        </div>
-      </div>
-
-      <!-- Vertical divider -->
-      <div class="hidden md:block h-[20px] w-[1px] bg-[#1a44a7] shadow-[1px_0_0_#2b69ee] mx-1"></div>
+      <div class="hidden md:block h-[20px] w-[1px] bg-[#1a44a7] shadow-[1px_0_0_#2b69ee] mx-2"></div>
 
       <!-- Task Buttons List -->
-      <div class="flex items-center gap-1 h-full px-1 overflow-x-auto no-scrollbar min-w-0 flex-1">
+      <div class="flex items-center gap-1 h-full pr-1 overflow-x-auto no-scrollbar min-w-0 flex-1">
         <div
           v-for="win in windows"
           :key="win.id"

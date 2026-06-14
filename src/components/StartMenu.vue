@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
         <span class="text-xl">🤵</span>
       </div>
       <div class="flex flex-col">
-        <span class="text-white font-bold text-sm drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">Thomas</span>
+        <span class="text-white font-bold text-sm drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">Thomas LY</span>
         <span class="text-[#b4d2ff] text-[10px] uppercase font-bold tracking-wider leading-none">Développeur Fullstack</span>
       </div>
     </div>
@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
         >
           <img src="/assets/icons/resume.png" alt="Parcours" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
-            <span class="font-bold">Mon Parcours (CV)</span>
+            <span class="font-bold">CV</span>
             <span class="text-[9px] opacity-70 hover:text-white">Formations et expériences</span>
           </div>
         </div>
@@ -163,7 +163,7 @@ onBeforeUnmount(() => {
           <span class="font-bold text-[#0a246a] group-hover:text-white flex items-center justify-between w-full pr-1">
             Effet Écran CRT
             <span class="text-[9px] px-1 bg-[#4fa64f] text-white rounded font-bold" v-if="isCrtActive">ACTIF</span>
-            <span class="text-[9px] px-1 bg-gray-500 text-white rounded font-bold" v-else>DESACTIF</span>
+            <span class="text-[9px] px-1 bg-gray-500 text-white rounded font-bold" v-else>DÉSACTIVÉ</span>
           </span>
         </div>
       </div>

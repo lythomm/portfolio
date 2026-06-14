@@ -91,7 +91,7 @@ const emit = defineEmits<{
           >
             <img src="/assets/icons/resume.png" alt="Parcours" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
-              <span class="font-bold">Mon Parcours (CV)</span>
+              <span class="font-bold">CV</span>
               <span class="text-[10px] text-gray-500">Document texte</span>
             </div>
           </div>

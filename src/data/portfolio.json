@@ -71,24 +71,24 @@
   "experience": [
     {
       "id": "exp-1",
-      "year": "2024 - Présent",
-      "role": "Développeur Fullstack Freelance",
-      "company": "Auto-entrepreneur",
-      "desc": "Conception et développement de sites web sur mesure pour divers clients. Intégration de solutions e-commerce, optimisation SEO et performance des applications web."
+      "year": "2022 - 2026",
+      "role": "Développeur Fullstack",
+      "company": "BedBoat",
+      "desc": "Audit technique et restructuration de la plateforme pour la performance et scalabilité. <br>Introduction de la culture Agile (Sprints, Daily, Retrospectives). <br>Développement du système de réservation et intégration Stripe. <br>Optimisation des processus via automatisations Make."
     },
     {
       "id": "exp-2",
-      "year": "2022 - 2024",
-      "role": "Développeur Front-End Vue.js",
-      "company": "Tech Agency SAS",
-      "desc": "Développement de modules UI complexes pour un produit SaaS de gestion commerciale. Migration de bases de code legacy de Vue 2 vers Vue 3. Travail en équipe Scrum."
+      "year": "2021 - 2022",
+      "role": "Développeur Fullstack",
+      "company": "Iologo",
+      "desc": "Implémentation de fonctionnalités de bout en bout (UI, Logique, API). <br>Participation active à la transition technique suite à la fusion Lexidia. <br>Création d'un back-office autonome pour les équipes non-techniques."
     },
     {
       "id": "exp-3",
-      "year": "2019 - 2022",
-      "role": "Études & Projets Académiques",
-      "company": "École Supérieure du Digital",
-      "desc": "Obtention d'un diplôme en ingénierie logicielle et développement web. Réalisation de multiples projets de groupe et d'un stage de fin d'études en startup."
+      "year": "2020 - 2021",
+      "role": "Développeur Frontend",
+      "company": "Lexidia",
+      "desc": "Conception UI pour une application d'aide à l'orthophonie. <br>Traduction des besoins cliniques en solutions techniques."
     }
   ]
 }

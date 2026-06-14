@@ -14,9 +14,8 @@ const props = defineProps<{
 
 <template>
   <div class="bg-white p-4 flex-1 flex flex-col font-sans text-xs text-black select-none overflow-y-auto">
-    <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-4 text-[11px] flex justify-between items-center">
-      <span>Curriculum Vitae - Thomas</span>
-      <span>Hébergé en local</span>
+    <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-4 text-[11px] flex items-center">
+      <span>Curriculum Vitae - Thomas LY</span>
     </div>
 
     <!-- Retro page sheet -->
@@ -24,12 +23,12 @@ const props = defineProps<{
       
       <!-- Resume Header -->
       <div class="border-b-[3px] border-[#0a246a] pb-3 text-center">
-        <h2 class="text-xl font-black text-[#0a246a] tracking-wide m-0">THOMAS</h2>
+        <h2 class="text-xl font-black text-[#0a246a] tracking-wide m-0">THOMAS LY</h2>
         <div class="text-[11px] font-bold text-gray-500 mt-1 uppercase">Développeur Fullstack Web & Logiciel</div>
         <div class="text-[9px] text-gray-400 mt-1 flex flex-wrap justify-center gap-x-4 gap-y-1">
-          <span>📧 thomas@example.com</span>
-          <span>🌐 github.com/thomas</span>
-          <span>📍 Paris, France</span>
+          <span>📧 lythomm@gmail.com</span>
+          <span>🌐 github.com/lythomm</span>
+          <span>📍 Toulouse, France</span>
         </div>
       </div>
 
@@ -57,8 +56,7 @@ const props = defineProps<{
 
             <div class="font-bold text-gray-600 text-[10px] mb-1.5">{{ exp.company }}</div>
             
-            <p class="text-[10px] text-gray-500 leading-relaxed font-light">
-              {{ exp.desc }}
+            <p v-html="exp.desc" class="text-[10px] text-gray-500 leading-relaxed font-light">
             </p>
           </div>
         </div>
@@ -72,17 +70,24 @@ const props = defineProps<{
         <div class="flex flex-col gap-2.5 pl-2">
           <div class="flex justify-between items-start">
             <div>
-              <div class="font-bold">Licence Professionnelle Développeur Web</div>
-              <div class="text-gray-500 text-[10px]">Université du Web, Paris</div>
+              <div class="font-bold">Ingénieur spécialité AISL (Architecture et Ingénierie des Systèmes et Logiciels)</div>
+              <div class="text-gray-500 text-[10px]">IPST-CNAM</div>
             </div>
-            <span class="text-[9px] text-gray-400 font-bold whitespace-nowrap">2018 - 2019</span>
+            <span class="text-[9px] text-gray-400 font-bold whitespace-nowrap">2021 - 2023</span>
           </div>
           <div class="flex justify-between items-start">
             <div>
-              <div class="font-bold">BTS Services Informatiques aux Organisations (SIO)</div>
-              <div class="text-gray-500 text-[10px]">Lycée Technique du Digital, Paris</div>
+              <div class="font-bold">License Informatique</div>
+              <div class="text-gray-500 text-[10px]">ISPT-CNAM</div>
             </div>
-            <span class="text-[9px] text-gray-400 font-bold whitespace-nowrap">2016 - 2018</span>
+            <span class="text-[9px] text-gray-400 font-bold whitespace-nowrap">2020-2021</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="font-bold">DUT Informatique</div>
+              <div class="text-gray-500 text-[10px]">IUT Informatique de Paul Sabatier (Toulouse)</div>
+            </div>
+            <span class="text-[9px] text-gray-400 font-bold whitespace-nowrap">2018-2020</span>
           </div>
         </div>
       </div>

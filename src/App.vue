@@ -81,7 +81,7 @@ const desktopIcons = ref([
   { id: 'computer', label: 'Poste de travail', icon: '/assets/icons/computer.png' },
   { id: 'projects', label: 'Mes Projets', icon: '/assets/icons/folder_documents.png' },
   { id: 'skills', label: 'Mes Compétences', icon: '/assets/icons/skills.png' },
-  { id: 'resume', label: 'Mon Parcours (CV)', icon: '/assets/icons/resume.png' },
+  { id: 'resume', label: 'CV', icon: '/assets/icons/resume.png' },
   { id: 'mail', label: 'Outlook Express', icon: '/assets/icons/mail.svg' },
   { id: 'trash', label: 'Corbeille', icon: '/assets/icons/recycle_bin.png' }
 ])
@@ -150,7 +150,7 @@ const windows = reactive<Record<string, WindowState>>({
   },
   resume: {
     id: 'resume',
-    title: 'Mon Parcours (CV)',
+    title: 'CV',
     isOpen: false,
     isMinimized: false,
     isMaximized: false,
@@ -887,7 +887,7 @@ onBeforeUnmount(() => {
 
       <!-- Copyright -->
       <div class="absolute bottom-6 text-[9px] text-zinc-600 font-light flex flex-col items-center gap-0.5">
-        <span>Copyright © 2026 Thomas. Tous droits réservés.</span>
+        <span>Copyright © 2026 Thomas LY. Tous droits réservés.</span>
         <span class="opacity-55 text-[7px]">Propulsé par Vue 3 & Tailwind v4</span>
       </div>
     </div>
