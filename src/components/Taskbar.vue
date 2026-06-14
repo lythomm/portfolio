@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- Clock / System Tray -->
-    <div class="systray h-full bg-[#092e8a] border-l border-[#123d9b] shadow-[inset_2px_0_4px_rgba(0,0,0,0.5)] flex items-center px-3 text-white text-[11px] font-medium gap-2">
+    <div class="systray h-full bg-[#092e8a] border-l border-[#123d9b] shadow-[inset_2px_0_4px_rgba(0,0,0,0.5)] flex items-center px-3 text-white text-xs font-medium gap-2">
       <!-- CRT toggle button -->
       <button 
         class="relative w-6 h-6 flex items-center justify-center cursor-pointer hover:bg-white/15 rounded border-none bg-transparent text-white focus:outline-none transition-colors mr-1"
@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
         ></span>
       </button>
       <!-- Minimal icons representing system tools -->
-      <span class="text-[10px] opacity-75">🔊</span>
+      <span class="text-xs opacity-75">🔊</span>
       <!-- Real Time Clock -->
       <span>{{ currentTime }}</span>
     </div>

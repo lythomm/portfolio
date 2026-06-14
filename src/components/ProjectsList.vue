@@ -18,7 +18,7 @@ const emit = defineEmits<{
 
 <template>
   <div class="bg-white p-3 flex-1 overflow-y-auto font-sans text-xs text-black select-none">
-    <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-4 text-[11px] flex justify-between items-center">
+    <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-4 text-xs flex justify-between items-center">
       <span>Dossier : C:\Mes Documents\Projets</span>
       <span>{{ projects.length }} élément(s)</span>
     </div>
@@ -40,7 +40,7 @@ const emit = defineEmits<{
         />
         
         <!-- Title -->
-        <span class="font-bold text-[#0a246a] group-hover:underline text-[11px] leading-tight mb-1">
+        <span class="font-bold text-[#0a246a] group-hover:underline text-xs leading-tight mb-1">
           {{ proj.title }}
         </span>
         

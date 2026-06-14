@@ -14,7 +14,7 @@ const emit = defineEmits<{
         <div class="bg-gradient-to-r from-[#e7f0ff] to-[#abbdd9] px-2 py-1 font-bold text-[#0a246a] border-b border-white flex items-center justify-between">
           <span>Gestion des tâches</span>
         </div>
-        <div class="p-2 flex flex-col gap-1.5 text-[10px]">
+        <div class="p-2 flex flex-col gap-1.5 text-xs">
           <div class="flex items-center gap-1.5 cursor-pointer hover:underline text-[#0c39a6]" @click="emit('open-folder', 'projects')">
             📂 <span>Voir mes réalisations</span>
           </div>
@@ -32,7 +32,7 @@ const emit = defineEmits<{
         <div class="bg-gradient-to-r from-[#e7f0ff] to-[#abbdd9] px-2 py-1 font-bold text-[#0a246a] border-b border-white flex items-center justify-between">
           <span>Autres emplacements</span>
         </div>
-        <div class="p-2 flex flex-col gap-1.5 text-[10px] text-[#0c39a6]">
+        <div class="p-2 flex flex-col gap-1.5 text-xs text-[#0c39a6]">
           <div class="flex items-center gap-1.5">
             🖥️ <span>Réseau local</span>
           </div>
@@ -52,7 +52,7 @@ const emit = defineEmits<{
       
       <!-- Hard Disk Drives Section -->
       <div class="mb-4">
-        <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-3 text-[11px]">
+        <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-3 text-xs">
           Fichiers stockés sur cet ordinateur
         </div>
         
@@ -66,7 +66,7 @@ const emit = defineEmits<{
             <img src="/assets/icons/folder_documents.png" alt="Projets" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">Mes Projets</span>
-              <span class="text-[10px] text-gray-500">Dossier de fichiers</span>
+              <span class="text-xs text-gray-500">Dossier de fichiers</span>
             </div>
           </div>
 
@@ -79,7 +79,7 @@ const emit = defineEmits<{
             <img src="/assets/icons/skills.png" alt="Compétences" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">Mes Compétences</span>
-              <span class="text-[10px] text-gray-500">Dossier système</span>
+              <span class="text-xs text-gray-500">Dossier système</span>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ const emit = defineEmits<{
             <img src="/assets/icons/resume.png" alt="Parcours" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">CV</span>
-              <span class="text-[10px] text-gray-500">Document texte</span>
+              <span class="text-xs text-gray-500">Document texte</span>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@ const emit = defineEmits<{
 
       <!-- System Devices Section -->
       <div>
-        <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-3 text-[11px]">
+        <div class="font-bold text-gray-500 pb-1 border-b border-gray-200 mb-3 text-xs">
           Périphériques utilisant des supports amovibles
         </div>
 
@@ -109,7 +109,7 @@ const emit = defineEmits<{
           <img src="/assets/icons/disk.png" alt="Disquette 3½" class="w-8 h-8 object-contain" />
           <div class="flex flex-col">
             <span class="font-bold">Lecteur de disquette (A:)</span>
-            <span class="text-[10px] text-gray-500">Support amovible</span>
+            <span class="text-xs text-gray-500">Support amovible</span>
           </div>
         </div>
       </div>

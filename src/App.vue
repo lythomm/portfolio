@@ -464,7 +464,7 @@ onBeforeUnmount(() => {
     >
       <span class="text-4xl text-white font-bold drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]">⏻</span>
     </div>
-    <span class="text-[10px] text-zinc-400 uppercase tracking-widest mt-4 font-semibold">
+    <span class="text-xs text-zinc-400 uppercase tracking-widest mt-4 font-semibold">
       Cliquer pour démarrer
     </span>
   </div>
@@ -823,7 +823,7 @@ onBeforeUnmount(() => {
         
         <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="toggleCrtEffect">
           <span class="flex items-center gap-2">
-            <span class="w-3 text-center text-[10px] font-bold">{{ isCrtActive ? '✓' : '' }}</span>
+            <span class="w-3 text-center text-xs font-bold">{{ isCrtActive ? '✓' : '' }}</span>
             <span>Effet Écran CRT</span>
           </span>
         </div>

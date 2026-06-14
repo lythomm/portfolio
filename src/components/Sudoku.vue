@@ -477,7 +477,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="sudoku-game flex flex-col h-full bg-[#c0c0c0] font-sans select-none text-black">
     <!-- Menu Bar -->
-    <div class="menu-bar flex items-center bg-[#ece9d8] border-b border-[#808080] text-[11px] py-0.5 px-2 relative z-50">
+    <div class="menu-bar flex items-center bg-[#ece9d8] border-b border-[#808080] text-xs py-0.5 px-2 relative z-50">
       <div class="relative mr-1">
         <div 
           role="button"
@@ -489,25 +489,25 @@ onBeforeUnmount(() => {
           Jeu
         </div>
         <div v-if="activeMenu === 'game'" class="absolute left-0 mt-0.5 bg-white border border-[#808080] shadow-md z-[60] w-44 py-1 flex flex-col text-black font-medium">
-          <div role="button" tabindex="0" class="group px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex justify-between w-full text-left rounded-none font-medium text-[11px] outline-none" @click="generatePuzzle">
+          <div role="button" tabindex="0" class="group px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex justify-between w-full text-left rounded-none font-medium text-xs outline-none" @click="generatePuzzle">
             <span>Nouveau</span>
             <span class="text-gray-400 group-hover:text-white">F2</span>
           </div>
           <div class="border-t border-gray-300 my-1"></div>
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-[11px] outline-none" @click="changeDifficulty('beginner')">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-xs outline-none" @click="changeDifficulty('beginner')">
             <span class="w-3 text-xs">{{ difficulty === 'beginner' ? '✓' : '' }}</span>
             <span>Débutant</span>
           </div>
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-[11px] outline-none" @click="changeDifficulty('intermediate')">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-xs outline-none" @click="changeDifficulty('intermediate')">
             <span class="w-3 text-xs">{{ difficulty === 'intermediate' ? '✓' : '' }}</span>
             <span>Intermédiaire</span>
           </div>
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-[11px] outline-none" @click="changeDifficulty('expert')">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer flex items-center gap-2 w-full text-left rounded-none font-medium text-xs outline-none" @click="changeDifficulty('expert')">
             <span class="w-3 text-xs">{{ difficulty === 'expert' ? '✓' : '' }}</span>
             <span>Expert</span>
           </div>
           <div class="border-t border-gray-300 my-1"></div>
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-[11px] outline-none" @click="closeApp">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-xs outline-none" @click="closeApp">
             Quitter
           </div>
         </div>
@@ -523,10 +523,10 @@ onBeforeUnmount(() => {
           ?
         </div>
         <div v-if="activeMenu === 'help'" class="absolute left-0 mt-0.5 bg-white border border-[#808080] shadow-md z-[60] w-44 py-1 flex flex-col text-black font-medium">
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-[11px] outline-none" @click="showRules">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-xs outline-none" @click="showRules">
             Comment jouer
           </div>
-          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-[11px] outline-none" @click="showAbout">
+          <div role="button" tabindex="0" class="px-4 py-1 hover:bg-[#316ac5] hover:text-white cursor-pointer w-full text-left rounded-none font-medium text-xs outline-none" @click="showAbout">
             À propos du Sudoku
           </div>
         </div>
@@ -608,7 +608,7 @@ onBeforeUnmount(() => {
       <div class="flex gap-2 justify-center w-[278px]">
         <!-- Pencil toggle button -->
         <button 
-          class="flex-1 py-1 font-bold text-[11px] cursor-pointer flex items-center justify-center gap-1 border-radius-0 shadow-none"
+          class="flex-1 py-1 font-bold text-xs cursor-pointer flex items-center justify-center gap-1 border-radius-0 shadow-none"
           :class="notesMode ? 'active-border-inset bg-[#e5e5e5]' : ''"
           @click="notesMode = !notesMode"
         >
@@ -616,14 +616,14 @@ onBeforeUnmount(() => {
         </button>
 
         <button 
-          class="flex-1 py-1 font-bold text-[11px] cursor-pointer flex items-center justify-center gap-1 shadow-none"
+          class="flex-1 py-1 font-bold text-xs cursor-pointer flex items-center justify-center gap-1 shadow-none"
           @click="fillHint"
         >
           💡 Indice
         </button>
 
         <button 
-          class="flex-1 py-1 font-bold text-[11px] cursor-pointer flex items-center justify-center gap-1 shadow-none"
+          class="flex-1 py-1 font-bold text-xs cursor-pointer flex items-center justify-center gap-1 shadow-none"
           @click="solvePuzzle"
         >
           🤖 Résoudre

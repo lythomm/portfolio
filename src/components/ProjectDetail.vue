@@ -29,7 +29,7 @@ const emit = defineEmits<{
       >
         <span>⬅️</span> Précédent
       </button>
-      <span class="text-[10px] text-gray-400 uppercase font-bold">Détails du projet</span>
+      <span class="text-xs text-gray-400 uppercase font-bold">Détails du projet</span>
     </div>
 
     <!-- Project details -->
@@ -38,24 +38,25 @@ const emit = defineEmits<{
       <!-- Left Column (Visual Card / Details) -->
       <div class="md:w-[35%] flex flex-col items-center bg-[#f4f7fc] border border-[#d2dcf0] rounded p-4 text-center h-fit">
         <img src="/assets/icons/folder_documents.png" alt="Icon" class="w-12 h-12 object-contain mb-3" />
-        <h3 class="font-bold text-sm text-[#0a246a] mb-1">{{ project.title }}</h3>
-        <p class="text-[10px] text-gray-500 mb-3 leading-relaxed">{{ project.desc }}</p>
+        <h3 class="font-bold text-xl! text-[#0a246a] mb-4">{{ project.title }}</h3>
         
         <!-- Action Buttons -->
         <div class="flex flex-col gap-1.5 w-full">
           <a 
             :href="project.link" 
             target="_blank"
-            class="w-full text-center py-1 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-bold rounded shadow cursor-pointer text-[10px] active:brightness-95 decoration-none"
           >
-            🌐 Lancer l'application
+            <button class="w-full cursor-pointer font-bold">
+              🌐 Lancer l'application
+            </button>
           </a>
-          <a 
-            :href="project.github" 
-            target="_blank"
-            class="w-full text-center py-1 bg-[#f1f1f1] border border-gray-400 hover:bg-gray-200/80 text-gray-700 font-bold rounded shadow cursor-pointer text-[10px] active:brightness-95 decoration-none"
+          <a
+          :href="project.github" 
+          target="_blank"
           >
-            🐙 Visiter le dépôt GitHub
+            <button class="w-full cursor-pointer">
+              🐙 Visiter le dépôt GitHub
+            </button>
           </a>
         </div>
       </div>
@@ -64,7 +65,7 @@ const emit = defineEmits<{
       <div class="flex-1 flex flex-col gap-3">
         <div>
           <div class="font-bold text-[#0a246a] mb-1.5 border-b border-sky-100 pb-0.5">Description détaillée :</div>
-          <p class="leading-relaxed text-gray-700 whitespace-pre-line text-[11px]">
+          <p class="leading-relaxed text-gray-700 whitespace-pre-line text-sm">
             {{ project.longDesc }}
           </p>
         </div>

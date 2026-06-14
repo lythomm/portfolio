@@ -69,7 +69,7 @@ const handleCancel = () => {
 
       <!-- 2. Selection Area -->
       <div class="w-full flex flex-col gap-1.5">
-        <span class="text-gray-700 font-bold text-[10px]">Arrière-plan :</span>
+        <span class="text-gray-700 font-bold text-xs">Arrière-plan :</span>
         
         <div class="flex gap-3 h-[120px] w-full">
           <!-- Listbox -->
@@ -77,7 +77,7 @@ const handleCancel = () => {
             <div 
               v-for="(wp, idx) in wallpapers" 
               :key="idx"
-              class="px-2 py-1 cursor-default text-[11px] truncate flex items-center justify-between"
+              class="px-2 py-1 cursor-default text-xs truncate flex items-center justify-between"
               :class="tempIndex === idx ? 'bg-[#316ac5] text-white' : 'text-black hover:bg-gray-100'"
               @click="tempIndex = idx"
             >
@@ -89,7 +89,7 @@ const handleCancel = () => {
           <!-- Quick Actions on the side -->
           <div class="flex flex-col gap-2 w-[85px] justify-start">
             <button 
-              class="xp-btn py-1 px-2 border text-center font-bold text-[10px] w-full cursor-pointer hover:bg-gray-50 active:brightness-95"
+              class="xp-btn py-1 px-2 border text-center font-bold text-xs w-full cursor-pointer hover:bg-gray-50 active:brightness-95"
               @click="tempIndex = 0"
             >
               Par défaut

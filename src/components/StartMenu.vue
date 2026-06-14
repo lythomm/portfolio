@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
       </div>
       <div class="flex flex-col">
         <span class="text-white font-bold text-sm drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">Thomas LY</span>
-        <span class="text-[#b4d2ff] text-[10px] uppercase font-bold tracking-wider leading-none">Développeur Fullstack</span>
+        <span class="text-[#b4d2ff] text-xs uppercase font-bold tracking-wider leading-none">Développeur Fullstack</span>
       </div>
     </div>
 
@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
     <div class="flex-1 flex bg-white text-xs text-[#333]">
       <!-- Left Side (Programs) -->
       <div class="w-[55%] bg-white p-1.5 flex flex-col gap-1">
-        <div class="text-[10px] text-gray-400 font-bold px-1.5 py-0.5 border-b border-gray-100 uppercase">Programmes</div>
+        <div class="text-xs text-gray-400 font-bold px-1.5 py-0.5 border-b border-gray-100 uppercase">Programmes</div>
         
         <div 
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
@@ -174,7 +174,7 @@ onBeforeUnmount(() => {
       <div 
         role="button"
         tabindex="0"
-        class="flex items-center gap-1.5 bg-[#d37016] border border-[#f39c12] hover:bg-[#e67e22] text-white px-2 py-1 rounded text-[11px] font-bold shadow-md cursor-pointer transition-colors"
+        class="flex items-center gap-1.5 bg-[#d37016] border border-[#f39c12] hover:bg-[#e67e22] text-white px-2 py-1 rounded text-xs font-bold shadow-md cursor-pointer transition-colors"
         @click="emit('close-all'); emit('close')"
         @keydown.enter="emit('close-all'); emit('close')"
         @keydown.space.prevent="emit('close-all'); emit('close')"

@@ -104,8 +104,8 @@ html, body, #app {
   bottom: 0;
   right: 0;
   background: 
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.08) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.02));
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.035) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.002), rgba(0, 0, 255, 0.01));
   background-size: 100% 4px, 6px 100%;
   z-index: 9999999;
   pointer-events: none;
@@ -137,18 +137,18 @@ html, body, #app {
 
 /* Screen flicker animation - Irregular and more pronounced retro variation */
 @keyframes crt-flicker {
-  0% { opacity: 0.982; }
-  8% { opacity: 0.995; }
-  15% { opacity: 0.975; }
-  25% { opacity: 0.990; }
-  35% { opacity: 0.978; }
-  45% { opacity: 0.998; }
-  55% { opacity: 0.980; }
-  68% { opacity: 0.993; }
-  77% { opacity: 0.974; }
-  88% { opacity: 0.995; }
-  95% { opacity: 0.979; }
-  100% { opacity: 0.985; }
+  0% { opacity: 0.991; }
+  8% { opacity: 0.997; }
+  15% { opacity: 0.988; }
+  25% { opacity: 0.995; }
+  35% { opacity: 0.990; }
+  45% { opacity: 0.999; }
+  55% { opacity: 0.991; }
+  68% { opacity: 0.997; }
+  77% { opacity: 0.988; }
+  88% { opacity: 0.997; }
+  95% { opacity: 0.990; }
+  100% { opacity: 0.993; }
 }
 
 
