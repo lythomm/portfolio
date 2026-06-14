@@ -1,0 +1,94 @@
+{
+  "profile": {
+    "name": "Thomas",
+    "title": "Développeur Fullstack",
+    "about": "Passionné par le développement web, le design d'interfaces et l'histoire de l'informatique. Je conçois des applications web modernes avec des technologies de pointe, tout en gardant une affection particulière pour l'esthétique rétro.",
+    "email": "lythomm@gmail.com",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com"
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "E-Commerce RetroShop",
+      "desc": "Boutique en ligne vendant des objets rétro des années 90/2000.",
+      "longDesc": "Une plateforme e-commerce complète avec panier en temps réel, système de paiement fictif (Stripe), et interface d'administration. Ce projet a été construit pour démontrer mes compétences en backend (API Node.js/Express) et en frontend réactif.",
+      "tags": ["Vue 3", "Node.js", "Express", "TailwindCSS", "Stripe"],
+      "link": "https://retroshop.example.com",
+      "github": "https://github.com/thomas/retroshop",
+      "icon": "disk"
+    },
+    {
+      "id": "project-2",
+      "title": "TaskMaster Pro",
+      "desc": "Application de productivité de type Kanban avec synchronisation cloud.",
+      "longDesc": "Un outil de gestion de tâches inspiré de Trello. Il inclut le glisser-déposer pour organiser les tâches, la collaboration en temps réel avec WebSockets, et une architecture modulaire robuste côté frontend.",
+      "tags": ["TypeScript", "Vue 3", "Pinia", "WebSockets", "TailwindCSS"],
+      "link": "https://taskmaster.example.com",
+      "github": "https://github.com/thomas/taskmaster",
+      "icon": "folder"
+    },
+    {
+      "id": "project-3",
+      "title": "PixelPaint Canvas",
+      "desc": "Éditeur de pixel-art collaboratif en ligne.",
+      "longDesc": "Un éditeur graphique léger fonctionnant entièrement dans le navigateur avec l'API HTML5 Canvas. Permet de dessiner à plusieurs en simultané sur une grille de pixels grâce aux WebSockets, et d'exporter ses créations en format PNG/GIF.",
+      "tags": ["HTML5 Canvas", "Javascript", "Socket.io", "TailwindCSS"],
+      "link": "https://pixelpaint.example.com",
+      "github": "https://github.com/thomas/pixelpaint",
+      "icon": "paint"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "Vue 3 / Composition API", "level": 90 },
+        { "name": "TypeScript", "level": 85 },
+        { "name": "TailwindCSS v4", "level": 95 },
+        { "name": "HTML5 / CSS3 / ES6+", "level": 90 }
+      ]
+    },
+    {
+      "category": "Backend & BDD",
+      "items": [
+        { "name": "Node.js / Express", "level": 80 },
+        { "name": "PostgreSQL / MongoDB", "level": 75 },
+        { "name": "GraphQL / REST APIs", "level": 80 },
+        { "name": "Docker", "level": 70 }
+      ]
+    },
+    {
+      "category": "Outils & Méthodes",
+      "items": [
+        { "name": "Git & GitHub CI/CD", "level": 85 },
+        { "name": "Vite.js", "level": 90 },
+        { "name": "Méthodes Agiles (Scrum)", "level": 80 },
+        { "name": "Figma", "level": 75 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "year": "2024 - Présent",
+      "role": "Développeur Fullstack Freelance",
+      "company": "Auto-entrepreneur",
+      "desc": "Conception et développement de sites web sur mesure pour divers clients. Intégration de solutions e-commerce, optimisation SEO et performance des applications web."
+    },
+    {
+      "id": "exp-2",
+      "year": "2022 - 2024",
+      "role": "Développeur Front-End Vue.js",
+      "company": "Tech Agency SAS",
+      "desc": "Développement de modules UI complexes pour un produit SaaS de gestion commerciale. Migration de bases de code legacy de Vue 2 vers Vue 3. Travail en équipe Scrum."
+    },
+    {
+      "id": "exp-3",
+      "year": "2019 - 2022",
+      "role": "Études & Projets Académiques",
+      "company": "École Supérieure du Digital",
+      "desc": "Obtention d'un diplôme en ingénierie logicielle et développement web. Réalisation de multiples projets de groupe et d'un stage de fin d'études en startup."
+    }
+  ]
+}

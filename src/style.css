@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Tahoma, Geneva, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Import XP.css style system */
+@import "xp.css/dist/XP.css";
+
+/* Custom styles for our Windows XP desktop */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Tahoma, Geneva, sans-serif;
+  user-select: none;
+  background-color: #000000;
+}
+
+/* Custom modifications to XP.css styling to fit modern web integration */
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+
+.window-body {
+  flex: 1;
+  overflow: hidden !important;
+}
+
+/* Scrollbar styling for XP theme */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 1px 1px 0 #dfdfdf;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px solid #ffffff;
+  box-shadow: inset -1px -1px 0 #7f7f7f;
+}
+
+/* Text selections */
+::selection {
+  background: #0a246a;
+  color: white;
+}
+
+/* Desktop Styles */
+.desktop-bg {
+  background-color: #245edb; /* Classic Windows XP Blue fallback */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Restore content-box box-sizing for XP.css title bars to fix vertical button squeezing caused by Tailwind v4 preflight */
+.title-bar {
+  box-sizing: content-box !important;
+}
+
+.title-bar-controls button {
+  margin: 0 0 0 2px !important;
+}
+
+
+

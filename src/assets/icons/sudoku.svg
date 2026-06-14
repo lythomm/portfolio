@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="32" height="32" shape-rendering="crispEdges">
+  <!-- Background -->
+  <rect width="16" height="16" fill="#C0C0C0" />
+  <!-- Bevel -->
+  <path d="M0 0h16v1H1v14H0z" fill="#FFF" />
+  <path d="M15 1h1v15H0v-1h14z" fill="#808080" />
+  <!-- Grid Outline (Blue/Black grid) -->
+  <!-- Outer border -->
+  <rect x="2" y="2" width="12" height="12" fill="none" stroke="#000" stroke-width="1" />
+  <!-- Vertical dividing line -->
+  <rect x="7" y="2" width="2" height="12" fill="#808080" />
+  <!-- Horizontal dividing line -->
+  <rect x="2" y="7" width="12" height="2" fill="#808080" />
+  <!-- A few numbers (rendered as small color blocks) -->
+  <!-- Top-left: "5" (Blue) -->
+  <rect x="4" y="4" width="2" height="2" fill="#0000FF" />
+  <!-- Top-right: "3" (Red) -->
+  <rect x="10" y="4" width="2" height="2" fill="#FF0000" />
+  <!-- Bottom-left: "9" (Green) -->
+  <rect x="4" y="10" width="2" height="2" fill="#008000" />
+  <!-- Bottom-right: "1" (Black) -->
+  <rect x="10" y="10" width="2" height="2" fill="#000000" />
+</svg>

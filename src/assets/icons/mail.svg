@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <!-- Gradients for the envelope -->
+    <linearGradient id="envelopeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#fcfdfe" />
+      <stop offset="100%" stop-color="#d0dbeb" />
+    </linearGradient>
+    <linearGradient id="flapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2eafd" />
+    </linearGradient>
+    
+    <!-- Gradients for the blue arrow -->
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8cb2f2" />
+      <stop offset="40%" stop-color="#3c76df" />
+      <stop offset="100%" stop-color="#0a2c91" />
+    </linearGradient>
+    
+    <!-- Gradient for the red wax seal -->
+    <radialGradient id="sealGrad" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#ff4c4c" />
+      <stop offset="45%" stop-color="#b31515" />
+      <stop offset="100%" stop-color="#550000" />
+    </radialGradient>
+    
+    <!-- Shadows for 3D depth -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1.5" stdDeviation="0.8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="iconShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="1" dy="2.5" stdDeviation="1.5" flood-color="#0c2e7a" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Envelope with global shadow -->
+  <g filter="url(#iconShadow)">
+    
+    <!-- Envelope Base (Standard rectangular letter body) -->
+    <rect x="2" y="10" width="28" height="18" rx="1.5" fill="url(#envelopeGrad)" stroke="#3f485f" stroke-width="1.2" />
+
+    <!-- Inside fold indicators -->
+    <path d="M2 28 L11 20 M30 28 L21 20" stroke="#909cb4" stroke-width="1" />
+    
+    <!-- Bottom flap (folding up) -->
+    <path d="M2 28 L16 19 L30 28" fill="url(#flapGrad)" stroke="#6a7aa0" stroke-width="1.2" />
+
+    <!-- Top flap (folding down, closed) -->
+    <path d="M2 10.5 L16 19.5 L30 10.5" fill="url(#flapGrad)" stroke="#6a7aa0" stroke-width="1.2" />
+
+    <!-- Red Wax Seal in the center -->
+    <circle cx="16" cy="19.5" r="3.5" fill="url(#sealGrad)" stroke="#450000" stroke-width="0.8" filter="url(#shadow)" />
+    <!-- Seal detail -->
+    <circle cx="16" cy="19.5" r="1.8" fill="none" stroke="#ff7c7c" stroke-width="0.4" stroke-dasharray="1 1" />
+    
+    <!-- Postmark circle in top right -->
+    <circle cx="24" cy="14" r="3" fill="none" stroke="#254ba0" stroke-width="0.6" stroke-opacity="0.5" />
+    <path d="M20.5 13.5 L27.5 13.5 M21.5 14.5 L26.5 14.5" stroke="#254ba0" stroke-width="0.5" stroke-opacity="0.5" />
+
+    <!-- Blue Arrow flying over the envelope pointing right -->
+    <g transform="translate(6, 2.5) rotate(-5)" filter="url(#shadow)">
+      <!-- Arrow shape with outline -->
+      <path d="M1 5 L9 5 L9 2 L17 7 L9 12 L9 9 L1 9 Z" fill="url(#arrowGrad)" stroke="#061c5c" stroke-width="1.2" stroke-linejoin="round" />
+    </g>
+    
+  </g>
+</svg>
