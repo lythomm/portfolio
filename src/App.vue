@@ -18,6 +18,7 @@ import ResumeViewer from './components/ResumeViewer.vue'
 import Minesweeper from './components/Minesweeper.vue'
 import Sudoku from './components/Sudoku.vue'
 import MailApp from './components/MailApp.vue'
+import DisplayProperties from './components/DisplayProperties.vue'
 
 interface WindowState {
   id: string
@@ -36,6 +37,13 @@ interface WindowState {
 // Boot State: 'power_off' | 'booting' | 'fading' | 'desktop'
 const bootState = ref<'power_off' | 'booting' | 'fading' | 'desktop'>('power_off')
 
+const isCrtActive = ref(true)
+
+const toggleCrt = () => {
+  isCrtActive.value = !isCrtActive.value
+  localStorage.setItem('crt-preference', isCrtActive.value.toString())
+}
+
 const powerOn = () => {
   bootState.value = 'booting'
   
@@ -47,6 +55,13 @@ const powerOn = () => {
   // Transition to desktop at 4.0s
   setTimeout(() => {
     bootState.value = 'desktop'
+    
+    // Play startup sound when reaching the desktop
+    const audio = new Audio('/assets/startup_sound.wav')
+    audio.volume = 0.5
+    audio.play().catch(err => {
+      console.warn('Audio playback failed or was blocked by browser:', err)
+    })
   }, 4000)
 }
 
@@ -62,14 +77,38 @@ const selectedProject = computed(() => {
 })
 
 // Desktop shortcut icons configuration
-const desktopIcons = [
+const desktopIcons = ref([
   { id: 'computer', label: 'Poste de travail', icon: '/assets/icons/computer.png' },
   { id: 'projects', label: 'Mes Projets', icon: '/assets/icons/folder_documents.png' },
   { id: 'skills', label: 'Mes Compétences', icon: '/assets/icons/skills.png' },
   { id: 'resume', label: 'Mon Parcours (CV)', icon: '/assets/icons/resume.png' },
   { id: 'mail', label: 'Outlook Express', icon: '/assets/icons/mail.svg' },
   { id: 'trash', label: 'Corbeille', icon: '/assets/icons/recycle_bin.png' }
+])
+
+const wallpapers = [
+  { type: 'image', value: "url('/assets/wallpapers/bliss.jpg')", label: 'Bliss (Par défaut)' },
+  { type: 'image', value: "url('/assets/wallpapers/sea.png')", label: 'La Mer' },
+  { type: 'image', value: "url('/assets/wallpapers/moutain.jpg')", label: 'La Montagne' },
+  { type: 'image', value: "url('/assets/wallpapers/cave.jpg')", label: 'La Grotte' },
+  { type: 'image', value: "url('/assets/wallpapers/egypt.jpg')", label: 'Égypte' },
+  { type: 'image', value: "url('/assets/wallpapers/forest.jpg')", label: 'Forêt' },
+  { type: 'color', value: '#008080', label: 'Windows 98 Vert (Teal)' },
+  { type: 'color', value: '#3a6ea5', label: 'Windows XP Bleu' },
+  { type: 'gradient', value: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)', label: 'Bleu Royal' }
 ]
+const currentWallpaperIndex = ref(0)
+const wallpaperStyle = computed(() => {
+  const wp = wallpapers[currentWallpaperIndex.value]
+  if (wp.type === 'image') {
+    return { backgroundImage: wp.value, backgroundSize: 'cover', backgroundPosition: 'center' }
+  } else if (wp.type === 'color') {
+    return { backgroundColor: wp.value, backgroundImage: 'none' }
+  } else {
+    return { background: wp.value }
+  }
+})
+
 
 // Windows configurations and initial states
 const windows = reactive<Record<string, WindowState>>({
@@ -159,6 +198,19 @@ const windows = reactive<Record<string, WindowState>>({
     width: 580,
     height: 460,
     icon: '/assets/icons/mail.svg'
+  },
+  display: {
+    id: 'display',
+    title: 'Propriétés de l\'affichage',
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: 8,
+    x: 220,
+    y: 70,
+    width: 320,
+    height: 420,
+    icon: '/assets/icons/computer.png'
   }
 })
 
@@ -208,6 +260,10 @@ const showCustomAlert = (message: string, title = 'Message', type: 'info' | 'war
 const openWindow = (id: string) => {
   if (id === 'trash') {
     showCustomAlert("La corbeille est vide !", "Corbeille", "info")
+    return
+  }
+  if (id.startsWith('new_folder_')) {
+    showCustomAlert("Ce dossier est vide.", "Dossier vide", "info")
     return
   }
   if (windows[id]) {
@@ -284,9 +340,72 @@ const handleTaskClick = (id: string) => {
   }
 }
 
+const contextMenu = reactive({
+  isOpen: false,
+  x: 0,
+  y: 0
+})
+
+const isRefreshing = ref(false)
+
 const handleDesktopClick = () => {
   selectedIconId.value = null
   isStartMenuOpen.value = false
+  contextMenu.isOpen = false
+}
+
+const handleDesktopRightClick = (e: MouseEvent) => {
+  const target = e.target as HTMLElement
+  
+  const isDesktopBg = target.classList.contains('desktop-bg') || 
+                      (target.closest('.desktop-grid-area') !== null && 
+                       target.closest('.window') === null && 
+                       target.closest('.desktop-icon') === null &&
+                       target.closest('.start-button') === null &&
+                       target.closest('.taskbar') === null &&
+                       target.closest('.start-menu') === null)
+                      
+  if (!isDesktopBg) {
+    return
+  }
+  
+  contextMenu.x = e.clientX
+  contextMenu.y = e.clientY
+  contextMenu.isOpen = true
+}
+
+const arrangeIcons = () => {
+  contextMenu.isOpen = false
+  desktopIcons.value.sort((a, b) => a.label.localeCompare(b.label))
+  isRefreshing.value = true
+  setTimeout(() => {
+    isRefreshing.value = false
+  }, 200)
+}
+
+const refreshDesktop = () => {
+  contextMenu.isOpen = false
+  isRefreshing.value = true
+  setTimeout(() => {
+    isRefreshing.value = false
+  }, 250)
+}
+
+
+
+const toggleCrtEffect = () => {
+  contextMenu.isOpen = false
+  toggleCrt()
+}
+
+const changeWallpaper = () => {
+  contextMenu.isOpen = false
+  openWindow('display')
+}
+
+const openProperties = () => {
+  contextMenu.isOpen = false
+  openWindow('display')
 }
 
 const closeAllWindows = () => {
@@ -311,13 +430,24 @@ const checkMobileLayout = () => {
   })
 }
 
+const handleWindowClick = () => {
+  contextMenu.isOpen = false
+}
+
 onMounted(() => {
   checkMobileLayout()
   window.addEventListener('resize', checkMobileLayout)
+  window.addEventListener('click', handleWindowClick)
+  
+  const saved = localStorage.getItem('crt-preference')
+  if (saved !== null) {
+    isCrtActive.value = saved === 'true'
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', checkMobileLayout)
+  window.removeEventListener('click', handleWindowClick)
 })
 </script>
 
@@ -335,21 +465,27 @@ onBeforeUnmount(() => {
       <span class="text-4xl text-white font-bold drop-shadow-[0_2px_3px_rgba(0,0,0,0.6)]">⏻</span>
     </div>
     <span class="text-[10px] text-zinc-400 uppercase tracking-widest mt-4 font-semibold">
-      Cliquer pour allumer
+      Cliquer pour démarrer
     </span>
   </div>
 
   <!-- 2. Bureau et Superposition de Boot (bootState !== 'power_off') -->
   <template v-else>
-    <!-- Bureau Virtuel -->
-    <div 
-      class="relative w-screen h-screen overflow-hidden desktop-bg flex flex-col font-sans select-none"
-      style="background-image: url('/assets/wallpapers/bliss.jpg')"
-      @click="handleDesktopClick"
-    >
+    <div class="crt-effects-container" :class="{ 'crt-enabled': isCrtActive }">
+      <div class="crt-screen-inner">
+        <!-- Bureau Virtuel -->
+        <div 
+          class="relative w-screen h-screen overflow-hidden desktop-bg flex flex-col font-sans select-none"
+          :style="wallpaperStyle"
+          @click="handleDesktopClick"
+          @contextmenu.prevent="handleDesktopRightClick"
+        >
       
       <!-- 1. Bureau Grid Area (Icons + Windows) -->
-      <div class="flex-1 w-full h-[calc(100vh-30px)] p-3 relative">
+      <div 
+        class="flex-1 w-full h-[calc(100vh-30px)] p-3 relative desktop-grid-area transition-opacity duration-150"
+        :class="{ 'opacity-30': isRefreshing }"
+      >
         
         <!-- Desktop Icons Grid (Left column) -->
         <div class="absolute left-3 top-3 flex flex-col gap-4 z-0">
@@ -605,22 +741,59 @@ onBeforeUnmount(() => {
           />
         </Window>
 
+        <!-- WINDOW: Propriétés de l'affichage -->
+        <Window
+          v-if="windows.display.isOpen"
+          :id="windows.display.id"
+          :title="windows.display.title"
+          :is-open="windows.display.isOpen"
+          :is-minimized="windows.display.isMinimized"
+          :is-maximized="windows.display.isMaximized"
+          :z-index="windows.display.zIndex"
+          :x="windows.display.x"
+          :y="windows.display.y"
+          :width="windows.display.width"
+          :height="windows.display.height"
+          :min-width="320"
+          :min-height="420"
+          @focus="focusWindow"
+          @close="closeWindow"
+          @minimize="minimizeWindow"
+          @maximize="maximizeWindow"
+          @move="moveWindow"
+          @resize="resizeWindow"
+        >
+          <template #icon>
+            <img src="/assets/icons/computer.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+          </template>
+          <DisplayProperties 
+            :wallpapers="wallpapers"
+            :current-index="currentWallpaperIndex"
+            @select-wallpaper="currentWallpaperIndex = $event"
+            @close="closeWindow('display')"
+          />
+        </Window>
+
       </div>
 
       <!-- 3. Start Menu Panel -->
       <StartMenu
         :is-open="isStartMenuOpen"
+        :is-crt-active="isCrtActive"
         @close="isStartMenuOpen = false"
         @open-app="openWindow"
         @close-all="closeAllWindows"
+        @toggle-crt="toggleCrt"
       />
 
       <!-- 4. Taskbar Bottom Area -->
       <Taskbar
         :windows="openWindowsList"
         :is-start-menu-open="isStartMenuOpen"
+        :is-crt-active="isCrtActive"
         @toggle-start="isStartMenuOpen = !isStartMenuOpen"
         @task-click="handleTaskClick"
+        @toggle-crt="toggleCrt"
       />
 
       <!-- Custom Alert Dialog Modal -->
@@ -631,6 +804,40 @@ onBeforeUnmount(() => {
         :type="alertDialog.type"
         @close="alertDialog.isOpen = false"
       />
+
+      <!-- Custom Windows XP style Context Menu -->
+      <div 
+        v-if="contextMenu.isOpen"
+        class="fixed z-[9999999] bg-[#f1eec0] md:bg-[#ece9d8] border-2 border-t-white border-l-white border-b-[#808080] border-r-[#808080] shadow-[2px_2px_4px_rgba(0,0,0,0.4)] p-0.5 text-xs text-black font-sans min-w-[170px] pointer-events-auto"
+        :style="{ left: contextMenu.x + 'px', top: contextMenu.y + 'px' }"
+        @click.stop
+      >
+        <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="arrangeIcons">
+          <span>Réorganiser les icônes</span>
+        </div>
+        <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="refreshDesktop">
+          <span>Actualiser</span>
+        </div>
+        
+        <div class="h-[1px] bg-[#808080] my-1 mx-1 shadow-[0_1px_0_#ffffff]"></div>
+        
+        <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="toggleCrtEffect">
+          <span class="flex items-center gap-2">
+            <span class="w-3 text-center text-[10px] font-bold">{{ isCrtActive ? '✓' : '' }}</span>
+            <span>Effet Écran CRT</span>
+          </span>
+        </div>
+        
+        <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="changeWallpaper">
+          <span>Changer de fond d'écran</span>
+        </div>
+        
+        <div class="h-[1px] bg-[#808080] my-1 mx-1 shadow-[0_1px_0_#ffffff]"></div>
+        
+        <div class="hover:bg-[#316ac5] hover:text-white px-6 py-1 cursor-default flex justify-between items-center gap-4" @click="openProperties">
+          <span class="font-bold">Propriétés</span>
+        </div>
+      </div>
 
     </div>
 
@@ -684,6 +891,12 @@ onBeforeUnmount(() => {
         <span class="opacity-55 text-[7px]">Propulsé par Vue 3 & Tailwind v4</span>
       </div>
     </div>
+    
+      </div> <!-- Close crt-screen-inner -->
+      <div class="crt-vignette"></div>
+    </div> <!-- Close crt-effects-container -->
+
+
   </template>
 </template>
 

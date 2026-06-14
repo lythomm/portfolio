@@ -14,11 +14,13 @@ interface TaskbarWindow {
 const props = defineProps<{
   windows: TaskbarWindow[]
   isStartMenuOpen: boolean
+  isCrtActive: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'toggle-start'): void
   (e: 'task-click', id: string): void
+  (e: 'toggle-crt'): void
 }>()
 
 const currentTime = ref('')
@@ -114,6 +116,18 @@ onBeforeUnmount(() => {
 
     <!-- Clock / System Tray -->
     <div class="systray h-full bg-[#092e8a] border-l border-[#123d9b] shadow-[inset_2px_0_4px_rgba(0,0,0,0.5)] flex items-center px-3 text-white text-[11px] font-medium gap-2">
+      <!-- CRT toggle button -->
+      <button 
+        class="relative w-6 h-6 flex items-center justify-center cursor-pointer hover:bg-white/15 rounded border-none bg-transparent text-white focus:outline-none transition-colors mr-1"
+        :title="isCrtActive ? 'Effet CRT : Actif (Cliquer pour désactiver)' : 'Effet CRT : Inactif (Cliquer pour activer)'"
+        @click="emit('toggle-crt')"
+      >
+        <span class="text-[13px] leading-none select-none">📺</span>
+        <span 
+          class="absolute bottom-0 right-0 w-2 h-2 rounded-full border border-[#092e8a] transition-all duration-300"
+          :class="isCrtActive ? 'bg-[#39ff14] shadow-[0_0_4px_#39ff14]' : 'bg-[#ff3b30] shadow-[0_0_2px_#ff3b30]'"
+        ></span>
+      </button>
       <!-- Minimal icons representing system tools -->
       <span class="text-[10px] opacity-75">🔊</span>
       <!-- Real Time Clock -->

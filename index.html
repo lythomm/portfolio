@@ -8,6 +8,57 @@
   </head>
   <body>
     <div id="app"></div>
+    
+    <!-- CRT Distortion Filter -->
+    <svg style="display: none">
+      <defs>
+        <filter
+          id="crt-warp"
+          x="0"
+          y="0"
+          width="1"
+          height="1"
+          primitiveUnits="objectBoundingBox"
+        >
+          <feImage
+            id="crt-warp-map"
+            href="/lens-map.bmp"
+            result="map"
+            width="1"
+            height="1"
+            preserveAspectRatio="none"
+          />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="map"
+            scale="0.04"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <script>
+      // Load lens map as an object URL to bypass Chrome/Firefox security restrictions on SVG feImage
+      fetch('/lens-map.bmp')
+        .then(res => {
+          if (res.ok) return res.blob();
+          throw new Error('lens-map.bmp not found');
+        })
+        .then(blob => {
+          const url = URL.createObjectURL(blob);
+          const img = document.getElementById('crt-warp-map');
+          if (img) {
+            img.setAttribute('href', url);
+            img.setAttribute('xlink:href', url);
+          }
+        })
+        .catch(err => {
+          console.warn('Failed to load lens-map as object URL, falling back to direct href path:', err);
+        });
+    </script>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

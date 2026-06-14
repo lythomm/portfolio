@@ -3,12 +3,14 @@ import { onMounted, onBeforeUnmount, ref } from 'vue'
 
 const props = defineProps<{
   isOpen: boolean
+  isCrtActive: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'close'): void
   (e: 'open-app', id: string): void
   (e: 'close-all'): void
+  (e: 'toggle-crt'): void
 }>()
 
 const menuRef = ref<HTMLElement | null>(null)
@@ -149,6 +151,20 @@ onBeforeUnmount(() => {
         <div class="flex items-center gap-1.5 p-1 text-gray-500 opacity-60">
           <span class="text-[14px]">🔍</span>
           <span class="font-bold">Rechercher</span>
+        </div>
+
+        <div class="border-t border-[#b5d6f6] my-1"></div>
+
+        <div 
+          class="flex items-center gap-1.5 p-1 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer group"
+          @click="emit('toggle-crt')"
+        >
+          <span class="text-[14px] select-none">📺</span>
+          <span class="font-bold text-[#0a246a] group-hover:text-white flex items-center justify-between w-full pr-1">
+            Effet Écran CRT
+            <span class="text-[9px] px-1 bg-[#4fa64f] text-white rounded font-bold" v-if="isCrtActive">ACTIF</span>
+            <span class="text-[9px] px-1 bg-gray-500 text-white rounded font-bold" v-else>DESACTIF</span>
+          </span>
         </div>
       </div>
     </div>
