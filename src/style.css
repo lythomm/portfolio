@@ -104,8 +104,8 @@ html, body, #app {
   bottom: 0;
   right: 0;
   background: 
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.035) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.002), rgba(0, 0, 255, 0.01));
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.018) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.006), rgba(0, 255, 0, 0.001), rgba(0, 0, 255, 0.006));
   background-size: 100% 4px, 6px 100%;
   z-index: 9999999;
   pointer-events: none;

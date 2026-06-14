@@ -19,7 +19,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="bg-white p-4 flex flex-col flex-1 font-sans text-xs text-black select-none">
+  <div class="bg-white p-4 flex flex-col flex-1 font-sans text-xs text-black select-none min-h-0">
     
     <!-- Header with back button -->
     <div class="flex items-center justify-between pb-2 border-b border-gray-200 mb-3">
@@ -33,7 +33,7 @@ const emit = defineEmits<{
     </div>
 
     <!-- Project details -->
-    <div class="flex-1 flex flex-col md:flex-row gap-4 overflow-y-auto pr-1">
+    <div class="flex-1 flex flex-col md:flex-row gap-4 overflow-y-auto pr-1 min-h-0">
       
       <!-- Left Column (Visual Card / Details) -->
       <div class="md:w-[35%] flex flex-col items-center bg-[#f4f7fc] border border-[#d2dcf0] rounded p-4 text-center h-fit">
@@ -51,6 +51,7 @@ const emit = defineEmits<{
             </button>
           </a>
           <a
+          v-if="project.github"
           :href="project.github" 
           target="_blank"
           >

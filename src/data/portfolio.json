@@ -10,12 +10,11 @@
   "projects": [
     {
       "id": "project-1",
-      "title": "E-Commerce RetroShop",
-      "desc": "Boutique en ligne vendant des objets rétro des années 90/2000.",
-      "longDesc": "Une plateforme e-commerce complète avec panier en temps réel, système de paiement fictif (Stripe), et interface d'administration. Ce projet a été construit pour démontrer mes compétences en backend (API Node.js/Express) et en frontend réactif.",
-      "tags": ["Vue 3", "Node.js", "Express", "TailwindCSS", "Stripe"],
-      "link": "https://retroshop.example.com",
-      "github": "https://github.com/thomas/retroshop",
+      "title": "Bailconnect",
+      "desc": "Plateforme SaaS de gestion locative pour propriétaires — de l'annonce à la visite, en automatique.",
+      "longDesc": "J'ai conçu et développé BailConnect de A à Z : un SaaS qui facilite la gestion locative pour les propriétaires. Le produit couvre l'intégralité du funnel — de la publication d'annonce (avec import automatique) jusqu'à la planification des visites en ligne, en passant par la gestion des candidatures et les notifications email/SMS. Côté technique, j'ai architecturé un backend serverless avec Convex (queries/mutations/actions temps-réel, crons pour l'expiration des passes), intégré Stripe dans toutes ses dimensions (checkout, webhooks, downgrade automatique au dépassement de plan) et implémenté un modèle de sécurité robuste : tokens cryptographiques par candidat, validation server-side stricte, contrôle d'accès granulaire sur chaque mutation.",
+      "tags": ["React", "Next.js", "Convex", "TailwindCSS", "Stripe"],
+      "link": "https://bailconnect.fr",
       "icon": "disk"
     },
     {

@@ -25,10 +25,6 @@ const props = defineProps<{
       <img src="/assets/icons/skills.png" alt="Skills" class="w-10 h-10 object-contain flex-shrink-0" />
       <div>
         <h4 class="font-bold text-[#0a246a] text-sm">Thomas - Développeur Fullstack</h4>
-        <p class="text-xs text-gray-500 mt-0.5 leading-relaxed">
-          Niveaux d'expertise évalués d'après les projets réalisés en production et personnels. 
-          Surveillance du système de compétences : OK.
-        </p>
       </div>
     </div>
 
@@ -55,22 +51,12 @@ const props = defineProps<{
             </div>
             
             <!-- XP Styled Progress Bar -->
-            <div class="xp-progress-bar h-[12px] bg-gray-200 border border-gray-300 p-[1px] rounded-[1px] relative overflow-hidden shadow-inner flex">
-              <!-- Pixelated green/blue blocks represent progress -->
+            <div class="xp-progress-bar h-[12px] bg-gray-150 border border-gray-300 p-[1px] rounded-[1px] relative overflow-hidden flex">
+              <!-- Segmented green blocks represent progress -->
               <div 
-                class="progress-fill h-full bg-gradient-to-r from-emerald-500 to-green-500 flex gap-[2px] rounded-[1px]"
+                class="progress-fill h-full rounded-[1px]"
                 :style="{ width: `${skill.level}%` }"
-              >
-                <!-- Retro divider lines on the progress bar -->
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-                <div class="w-[6px] h-full bg-white/20 flex-shrink-0"></div>
-              </div>
+              ></div>
             </div>
 
           </div>
@@ -82,9 +68,27 @@ const props = defineProps<{
 
 <style scoped>
 .xp-progress-bar {
-  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.15);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+  background-color: #e2e2e2;
 }
 .progress-fill {
-  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.4), inset -1px -1px 1px rgba(0,0,0,0.2);
+  background-image: 
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0.15) 25%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgba(0, 0, 0, 0.25) 80%,
+      rgba(255, 255, 255, 0.4) 100%
+    ),
+    linear-gradient(
+      90deg,
+      #3cc13c 0px,
+      #3cc13c 6px,
+      transparent 6px,
+      transparent 8px
+    );
+  background-size: 100% 100%, 8px 100%;
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.4);
 }
 </style>
