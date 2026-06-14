@@ -22,7 +22,7 @@ const props = defineProps<{
 
     <!-- System info style box -->
     <div class="bg-white border border-gray-300 rounded p-3 mb-4 shadow-sm flex items-start gap-4">
-      <img src="/src/assets/icons/skills.png" alt="Skills" class="w-10 h-10 object-contain flex-shrink-0" />
+      <img src="/assets/icons/skills.png" alt="Skills" class="w-10 h-10 object-contain flex-shrink-0" />
       <div>
         <h4 class="font-bold text-[#0a246a] text-sm">Thomas - Développeur Fullstack</h4>
         <p class="text-[10px] text-gray-500 mt-0.5 leading-relaxed">

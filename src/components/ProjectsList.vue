@@ -34,7 +34,7 @@ const emit = defineEmits<{
       >
         <!-- Project Icon -->
         <img
-          src="/src/assets/icons/folder_documents.png"
+          src="/assets/icons/folder_documents.png"
           :alt="proj.title"
           class="w-10 h-10 object-contain mb-2 pointer-events-none group-hover:scale-105 transition-transform"
         />

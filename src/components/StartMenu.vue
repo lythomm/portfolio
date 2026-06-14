@@ -58,7 +58,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'projects'); emit('close')"
         >
-          <img src="/src/assets/icons/folder_documents.png" alt="Projets" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/folder_documents.png" alt="Projets" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Mes Réalisations</span>
             <span class="text-[9px] opacity-70 hover:text-white">Liste des projets web</span>
@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'skills'); emit('close')"
         >
-          <img src="/src/assets/icons/skills.png" alt="Compétences" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/skills.png" alt="Compétences" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Mes Compétences</span>
             <span class="text-[9px] opacity-70 hover:text-white">Frontend, Backend, Outils</span>
@@ -80,7 +80,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'resume'); emit('close')"
         >
-          <img src="/src/assets/icons/resume.png" alt="Parcours" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/resume.png" alt="Parcours" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Mon Parcours (CV)</span>
             <span class="text-[9px] opacity-70 hover:text-white">Formations et expériences</span>
@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'mail'); emit('close')"
         >
-          <img src="/src/assets/icons/mail.svg" alt="Outlook Express" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/mail.svg" alt="Outlook Express" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Outlook Express</span>
             <span class="text-[9px] opacity-70 hover:text-white">Envoyer un e-mail</span>
@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'minesweeper'); emit('close')"
         >
-          <img src="/src/assets/icons/minesweeper.svg" alt="Démineur" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/minesweeper.svg" alt="Démineur" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Démineur</span>
             <span class="text-[9px] opacity-70 hover:text-white">Jeu rétro classique</span>
@@ -113,7 +113,7 @@ onBeforeUnmount(() => {
           class="start-item flex items-center gap-2 p-1.5 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer"
           @click="emit('open-app', 'sudoku'); emit('close')"
         >
-          <img src="/src/assets/icons/sudoku.svg" alt="Sudoku" class="w-[22px] h-[22px] object-contain pointer-events-none" />
+          <img src="/assets/icons/sudoku.svg" alt="Sudoku" class="w-[22px] h-[22px] object-contain pointer-events-none" />
           <div class="flex flex-col">
             <span class="font-bold">Sudoku</span>
             <span class="text-[9px] opacity-70 hover:text-white">Jeu de réflexion logique</span>
@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
           class="flex items-center gap-1.5 p-1 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer group"
           @click="emit('open-app', 'computer'); emit('close')"
         >
-          <img src="/src/assets/icons/computer.png" alt="Poste de travail" class="w-4 h-4 object-contain" />
+          <img src="/assets/icons/computer.png" alt="Poste de travail" class="w-4 h-4 object-contain" />
           <span class="font-bold group-hover:text-white text-[#0a246a]">Poste de travail</span>
         </div>
 
@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
           class="flex items-center gap-1.5 p-1 rounded hover:bg-[#3d7ade] hover:text-white cursor-pointer group"
           @click="emit('open-app', 'projects'); emit('close')"
         >
-          <img src="/src/assets/icons/folder_documents.png" alt="Mes Projets" class="w-4 h-4 object-contain" />
+          <img src="/assets/icons/folder_documents.png" alt="Mes Projets" class="w-4 h-4 object-contain" />
           <span class="font-bold group-hover:text-white text-[#0a246a]">Mes Documents</span>
         </div>
 

@@ -73,10 +73,10 @@ onBeforeUnmount(() => {
       <!-- Quick Launch Placeholder (Retro style) -->
       <div class="hidden md:flex items-center gap-1.5 px-1">
         <div class="w-5 h-5 flex items-center justify-center hover:bg-white/10 rounded cursor-pointer" @click="emit('task-click', 'computer')">
-          <img src="/src/assets/icons/computer.png" alt="Poste" class="w-4 h-4 object-contain" />
+          <img src="/assets/icons/computer.png" alt="Poste" class="w-4 h-4 object-contain" />
         </div>
         <div class="w-5 h-5 flex items-center justify-center hover:bg-white/10 rounded cursor-pointer" @click="emit('task-click', 'projects')">
-          <img src="/src/assets/icons/folder_documents.png" alt="Projets" class="w-4 h-4 object-contain" />
+          <img src="/assets/icons/folder_documents.png" alt="Projets" class="w-4 h-4 object-contain" />
         </div>
       </div>
 
@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
         >
           <!-- Icon for the App -->
           <img 
-            :src="win.icon || '/src/assets/icons/computer.png'"
+            :src="win.icon || '/assets/icons/computer.png'"
             :alt="win.title"
             class="w-3.5 h-3.5 object-contain flex-shrink-0"
           />

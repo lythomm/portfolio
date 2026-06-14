@@ -37,7 +37,7 @@ const emit = defineEmits<{
       
       <!-- Left Column (Visual Card / Details) -->
       <div class="md:w-[35%] flex flex-col items-center bg-[#f4f7fc] border border-[#d2dcf0] rounded p-4 text-center h-fit">
-        <img src="/src/assets/icons/folder_documents.png" alt="Icon" class="w-12 h-12 object-contain mb-3" />
+        <img src="/assets/icons/folder_documents.png" alt="Icon" class="w-12 h-12 object-contain mb-3" />
         <h3 class="font-bold text-sm text-[#0a246a] mb-1">{{ project.title }}</h3>
         <p class="text-[10px] text-gray-500 mb-3 leading-relaxed">{{ project.desc }}</p>
         

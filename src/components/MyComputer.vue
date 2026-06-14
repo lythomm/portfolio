@@ -63,7 +63,7 @@ const emit = defineEmits<{
             @dblclick="emit('open-folder', 'projects')"
             @click="emit('open-folder', 'projects')" 
           >
-            <img src="/src/assets/icons/folder_documents.png" alt="Projets" class="w-8 h-8 object-contain" />
+            <img src="/assets/icons/folder_documents.png" alt="Projets" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">Mes Projets</span>
               <span class="text-[10px] text-gray-500">Dossier de fichiers</span>
@@ -76,7 +76,7 @@ const emit = defineEmits<{
             @dblclick="emit('open-folder', 'skills')"
             @click="emit('open-folder', 'skills')" 
           >
-            <img src="/src/assets/icons/skills.png" alt="Compétences" class="w-8 h-8 object-contain" />
+            <img src="/assets/icons/skills.png" alt="Compétences" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">Mes Compétences</span>
               <span class="text-[10px] text-gray-500">Dossier système</span>
@@ -89,7 +89,7 @@ const emit = defineEmits<{
             @dblclick="emit('open-folder', 'resume')"
             @click="emit('open-folder', 'resume')" 
           >
-            <img src="/src/assets/icons/resume.png" alt="Parcours" class="w-8 h-8 object-contain" />
+            <img src="/assets/icons/resume.png" alt="Parcours" class="w-8 h-8 object-contain" />
             <div class="flex flex-col">
               <span class="font-bold">Mon Parcours (CV)</span>
               <span class="text-[10px] text-gray-500">Document texte</span>
@@ -106,7 +106,7 @@ const emit = defineEmits<{
         </div>
 
         <div class="flex items-center gap-3 p-2 w-[200px] opacity-65">
-          <img src="/src/assets/icons/disk.png" alt="Disquette 3½" class="w-8 h-8 object-contain" />
+          <img src="/assets/icons/disk.png" alt="Disquette 3½" class="w-8 h-8 object-contain" />
           <div class="flex flex-col">
             <span class="font-bold">Lecteur de disquette (A:)</span>
             <span class="text-[10px] text-gray-500">Support amovible</span>

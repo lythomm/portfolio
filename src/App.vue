@@ -63,12 +63,12 @@ const selectedProject = computed(() => {
 
 // Desktop shortcut icons configuration
 const desktopIcons = [
-  { id: 'computer', label: 'Poste de travail', icon: '/src/assets/icons/computer.png' },
-  { id: 'projects', label: 'Mes Projets', icon: '/src/assets/icons/folder_documents.png' },
-  { id: 'skills', label: 'Mes Compétences', icon: '/src/assets/icons/skills.png' },
-  { id: 'resume', label: 'Mon Parcours (CV)', icon: '/src/assets/icons/resume.png' },
-  { id: 'mail', label: 'Outlook Express', icon: '/src/assets/icons/mail.svg' },
-  { id: 'trash', label: 'Corbeille', icon: '/src/assets/icons/recycle_bin.png' }
+  { id: 'computer', label: 'Poste de travail', icon: '/assets/icons/computer.png' },
+  { id: 'projects', label: 'Mes Projets', icon: '/assets/icons/folder_documents.png' },
+  { id: 'skills', label: 'Mes Compétences', icon: '/assets/icons/skills.png' },
+  { id: 'resume', label: 'Mon Parcours (CV)', icon: '/assets/icons/resume.png' },
+  { id: 'mail', label: 'Outlook Express', icon: '/assets/icons/mail.svg' },
+  { id: 'trash', label: 'Corbeille', icon: '/assets/icons/recycle_bin.png' }
 ]
 
 // Windows configurations and initial states
@@ -132,7 +132,7 @@ const windows = reactive<Record<string, WindowState>>({
     y: 80,
     width: 252,
     height: 375,
-    icon: '/src/assets/icons/minesweeper.svg'
+    icon: '/assets/icons/minesweeper.svg'
   },
   sudoku: {
     id: 'sudoku',
@@ -145,7 +145,7 @@ const windows = reactive<Record<string, WindowState>>({
     y: 100,
     width: 360,
     height: 500,
-    icon: '/src/assets/icons/sudoku.svg'
+    icon: '/assets/icons/sudoku.svg'
   },
   mail: {
     id: 'mail',
@@ -158,7 +158,7 @@ const windows = reactive<Record<string, WindowState>>({
     y: 80,
     width: 580,
     height: 460,
-    icon: '/src/assets/icons/mail.svg'
+    icon: '/assets/icons/mail.svg'
   }
 })
 
@@ -344,7 +344,7 @@ onBeforeUnmount(() => {
     <!-- Bureau Virtuel -->
     <div 
       class="relative w-screen h-screen overflow-hidden desktop-bg flex flex-col font-sans select-none"
-      style="background-image: url('/src/assets/wallpapers/bliss.jpg')"
+      style="background-image: url('/assets/wallpapers/bliss.jpg')"
       @click="handleDesktopClick"
     >
       
@@ -370,7 +370,7 @@ onBeforeUnmount(() => {
           <DesktopIcon
             id="minesweeper"
             label="Démineur"
-            icon-src="/src/assets/icons/minesweeper.svg"
+            icon-src="/assets/icons/minesweeper.svg"
             :is-selected="selectedIconId === 'minesweeper'"
             @select="selectedIconId = $event"
             @open="openWindow"
@@ -378,7 +378,7 @@ onBeforeUnmount(() => {
           <DesktopIcon
             id="sudoku"
             label="Sudoku"
-            icon-src="/src/assets/icons/sudoku.svg"
+            icon-src="/assets/icons/sudoku.svg"
             :is-selected="selectedIconId === 'sudoku'"
             @select="selectedIconId = $event"
             @open="openWindow"
@@ -410,7 +410,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/computer.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/computer.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <MyComputer @open-folder="openWindow" />
         </Window>
@@ -438,7 +438,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/folder_documents.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/folder_documents.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           
           <ProjectDetail 
@@ -476,7 +476,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/skills.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/skills.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <SkillsViewer :skills="portfolioData.skills" />
         </Window>
@@ -504,7 +504,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/resume.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/resume.png" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <ResumeViewer :experience="portfolioData.experience" />
         </Window>
@@ -532,7 +532,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/minesweeper.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/minesweeper.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <Minesweeper 
             @resize-window="handleMinesweeperResize" 
@@ -564,7 +564,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/sudoku.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/sudoku.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <Sudoku 
             @resize-window="handleSudokuResize" 
@@ -596,7 +596,7 @@ onBeforeUnmount(() => {
           @resize="resizeWindow"
         >
           <template #icon>
-            <img src="/src/assets/icons/mail.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
+            <img src="/assets/icons/mail.svg" alt="" class="w-4 h-4 object-contain pointer-events-none" />
           </template>
           <MailApp 
             :portfolio-email="portfolioData.profile.email"
