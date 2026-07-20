@@ -2,28 +2,26 @@
 const experiences = [
   {
     phase: 'Bases & Apprentissages',
-    period: '2015 - 2019',
+    period: '2018 - 2021',
     bullets: [
-      "Développement d'un intérêt marqué pour le <strong>storytelling visuel</strong> et l'<strong>expérience utilisateur</strong>, menant à mes premiers projets en freelance.",
-      "Étude des <strong>principes UI/UX</strong>, de la <strong>typographie</strong> et du <strong>design d'interaction</strong> lors de ma Licence en Informatique, axée sur les expériences numériques centrées sur l'humain."
+      "<strong>DUT & Licence Informatique</strong> (2018 - 2021) : Apprentissage des bases algorithmiques et de l'ingénierie des systèmes à Toulouse (IUT & IPST-CNAM).",
+      "<strong>Développeur Frontend @ Lexidia</strong> (2020 - 2021) : Conception UI pour une application d'aide à l'orthophonie et traduction des besoins cliniques en solutions techniques."
     ]
   },
   {
     phase: "Entrée dans l'Industrie",
-    period: '2019 - 2022',
+    period: '2021 - 2023',
     bullets: [
-      "Collaboration étroite avec des <strong>startups et entrepreneurs</strong> au sein de Creative Digital Agency pour aider les marques à bâtir une présence en ligne convaincante.",
-      "Direction du <strong>rebranding</strong> et de la <strong>refonte de sites web</strong> pour des entreprises souhaitant moderniser et optimiser leur empreinte numérique.",
-      "Développement d'une expertise approfondie en <strong>JavaScript, Figma et intégration d'animations complexes</strong> pour concevoir des interfaces performantes et fluides."
+      "<strong>Développeur Fullstack @ iologo</strong> (2021 - 2022) : Implémentation de fonctionnalités de bout en bout (UI, Logique, API), transition technique post-fusion Lexidia et création d'un back-office autonome.",
+      "<strong>Diplôme d'Ingénieur AISL</strong> (2021 - 2023) : Spécialité Architecture et Ingénierie des Systèmes et Logiciels à l'IPST-CNAM Toulouse."
     ]
   },
   {
-    phase: "Collaborations d'Envergure",
-    period: '2022 - Présent',
+    phase: "Aujourd'hui & Freelance",
+    period: '2022 - 2026',
     bullets: [
-      "Partenariat direct avec des <strong>agences, startups et marques d'envergure</strong> chez Tech Innovations Inc., livrant des solutions de conception à travers diverses industries.",
-      "Conception et développement de <strong>sites web axés sur la conversion</strong> et d'<strong>expériences UI/UX intuitives</strong> pour des plateformes SaaS, marques e-commerce et produits digitaux.",
-      "Encadrement d'une <strong>équipe de 4 développeurs frontend</strong> et optimisation des performances (temps de chargement amélioré de 40% sur la plateforme principale)."
+      "<strong>Développeur Fullstack @ BedBoat</strong> (2022 - 2026) : Audit technique, restructuration globale de la plateforme pour la performance/scalabilité et développement du système de réservation Stripe.",
+      "Optimisation opérationnelle via des automatisations <strong>Make</strong> et introduction structurante de la culture <strong>Agile</strong> (Sprints, Daily, Rétrospectives)."
     ]
   }
 ]
@@ -40,7 +38,7 @@ const experiences = [
           Moments Clés
         </h3>
         <p class="text-base md:text-lg text-[var(--color-text-muted)] max-w-xl font-sans leading-relaxed">
-          Moments clés, projets et rôles qui ont façonné mon parcours et mon approche du design au fil des ans.
+          Moments clés, projets et rôles qui ont façonné mon parcours et mon approche du dev au fil des ans.
         </p>
       </div>
 

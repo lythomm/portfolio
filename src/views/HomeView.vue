@@ -5,6 +5,7 @@ import HeroSection from '../sections/HeroSection.vue'
 import AboutSection from '../sections/AboutSection.vue'
 import ProjectsSection from '../sections/ProjectsSection.vue'
 import ServicesSection from '../sections/ServicesSection.vue'
+import PhilosophySection from '../sections/PhilosophySection.vue'
 import ExperienceSection from '../sections/ExperienceSection.vue'
 
 const route = useRoute()
@@ -62,6 +63,7 @@ watch(
     <AboutSection />
     <ProjectsSection />
     <ServicesSection />
+    <PhilosophySection />
     <ExperienceSection />
   </div>
 </template>
