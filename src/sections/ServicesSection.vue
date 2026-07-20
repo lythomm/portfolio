@@ -4,8 +4,11 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Brackets as Code2 } from 'pixelarticons/fonts/vue/Brackets'
 import { Monitor } from 'pixelarticons/fonts/vue/Monitor'
-import { Database } from 'pixelarticons/fonts/vue/Database'
-import { Zap as Rocket } from 'pixelarticons/fonts/vue/Zap'
+import { Zap } from 'pixelarticons/fonts/vue/Zap'
+import { Smartphone } from 'pixelarticons/fonts/vue/Smartphone'
+import { Search } from 'pixelarticons/fonts/vue/Search'
+import { SpeedFast } from 'pixelarticons/fonts/vue/SpeedFast'
+import { CloudServer } from 'pixelarticons/fonts/vue/CloudServer'
 import { ChevronRight } from 'pixelarticons/fonts/vue/ChevronRight'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -22,6 +25,20 @@ const services = [
       { name: 'React', iconUrl: '/icons/react.svg' },
       { name: 'Next.js', iconUrl: '/icons/nextjs-icon.svg' },
       { name: 'Stripe', iconUrl: '/icons/stripe-icon.svg' },
+      { name: 'Antigravity', iconUrl: '/icons/antigravity.google-logo.webp' },
+      { name: 'Supabase', iconUrl: '/icons/supabase-icon.svg' },
+      { name: 'Convex', iconUrl: '/icons/convex.dev-logo.webp' }
+    ]
+  },
+  {
+    icon: Smartphone,
+    title: 'Développement Mobile',
+    description: 'Conception et développement d\'applications mobiles réactives et intuitives pour iOS et Android avec des technologies cross-platform modernes.',
+    tools: [
+      { name: 'React Native', iconUrl: '/icons/reactnative.dev-logo.webp' },
+      { name: 'TypeScript', iconUrl: '/icons/typescript.svg' },
+      { name: 'Expo', iconUrl: '/icons/expo.dev-logo.webp' },
+      { name: 'Stripe', iconUrl: '/icons/stripe-icon.svg' },
       { name: 'Antigravity', iconUrl: '/icons/antigravity.google-logo.webp' }
     ]
   },
@@ -35,16 +52,27 @@ const services = [
     ]
   },
   {
-    icon: Database,
-    title: 'Backend & Bases de données',
-    description: 'Conception d\'architectures backend robustes, de bases de données réactives en temps réel et de solutions de stockage de fichiers sécurisées.',
+    icon: SpeedFast,
+    title: 'Optimisation Performance & SEO',
+    description: 'Amélioration des Core Web Vitals, réduction des temps de chargement, rendu côté serveur (SSR) et structuration SEO technique pour un référencement maximal.',
     tools: [
-      { name: 'Convex', iconUrl: '/icons/convex.dev-logo.webp' },
-      { name: 'Supabase', iconUrl: '/icons/supabase-icon.svg' }
+      { name: 'Lighthouse', iconUrl: '/icons/lighthouse.svg' },
+      { name: 'PageSpeed Insights', iconUrl: '/icons/google-pagespeed-insights-icon-2021-.svg' },
+      { name: 'Search Console', iconUrl: '/icons/search.google.com-logo.webp' },
     ]
   },
   {
-    icon: Rocket,
+    icon: CloudServer,
+    title: 'DevOps & CI/CD',
+    description: 'Automatisation des processus de build et déploiement, configuration d\'infrastructures cloud modernes et mise en place de monitoring applicatif.',
+    tools: [
+      { name: 'Vercel', iconUrl: '/icons/vercel.com-logo.webp' },
+      { name: 'Docker', iconUrl: '/icons/docker.com-logo.webp' },
+      { name: 'GitHub Actions', iconUrl: '/icons/github.com-logo.webp' },
+    ]
+  },
+  {
+    icon: Zap,
     title: 'Automatisation IA & Workflow',
     description: 'Création de scénarios d\'automatisation complexes pour connecter vos applications et optimiser la productivité de vos équipes.',
     tools: [
@@ -52,53 +80,73 @@ const services = [
       { name: 'Make', iconUrl: '/icons/make.com-logo.webp' },
       { name: 'Hermes', iconUrl: '/icons/nousresearch.com-logo.webp' }
     ]
+  },
+  {
+    icon: Search,
+    title: 'Audit Technique & Consultation',
+    description: 'Analyse approfondie de la qualité du code, de la sécurité et des performances de vos applications. Recommandations stratégiques et accompagnement d\'architecture.',
+    tools: [
+      { name: 'Lighthouse', iconUrl: '/icons/lighthouse.svg' },
+      { name: 'GitHub', iconUrl: '/icons/github.com-logo.webp' },
+      { name: 'Notion', iconUrl: '/icons/notion.com-logo.webp' }
+    ]
   }
 ]
 
-const activeIndex = ref(null)
+const activeIndexes = ref([])
 const serviceRefs = ref([])
 const textRefs = ref([])
 const tagsContainerRefs = ref([])
 
 let scrollCtx = null
 
-const toggleService = (index) => {
-  activeIndex.value = activeIndex.value === index ? null : index
+const isOpen = (index) => activeIndexes.value.includes(index)
+
+const toggleService = async (index) => {
+  if (isOpen(index)) {
+    activeIndexes.value = activeIndexes.value.filter(i => i !== index)
+  } else {
+    activeIndexes.value.push(index)
+    await nextTick()
+    animateServiceOpen(index)
+  }
+  
+  // Refresh Lenis & ScrollTrigger after accordion transition finishes
+  setTimeout(() => {
+    if (window.lenis) window.lenis.resize()
+    ScrollTrigger.refresh()
+  }, 400)
 }
 
-// Watch activeIndex to trigger expand animation of text & tags
-watch(activeIndex, async (newVal, oldVal) => {
-  await nextTick()
-  if (newVal !== null) {
-    const textEl = textRefs.value[newVal]
-    const tagsContainer = tagsContainerRefs.value[newVal]
-    
-    if (textEl && tagsContainer) {
-      // Animate description sliding from left
-      gsap.fromTo(textEl,
-        { opacity: 0, x: -15 },
-        { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }
-      )
+const animateServiceOpen = (index) => {
+  const textEl = textRefs.value[index]
+  const tagsContainer = tagsContainerRefs.value[index]
+  
+  if (textEl && tagsContainer) {
+    // Animate description sliding from left
+    gsap.fromTo(textEl,
+      { opacity: 0, x: -15 },
+      { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }
+    )
 
-      // Animate tags staggered pop scale
-      const tags = tagsContainer.children
-      if (tags.length) {
-        gsap.fromTo(tags,
-          { scale: 0.8, opacity: 0, y: 10 },
-          { 
-            scale: 1, 
-            opacity: 1, 
-            y: 0, 
-            duration: 0.45, 
-            stagger: 0.05, 
-            ease: 'back.out(1.7)',
-            delay: 0.1
-          }
-        )
-      }
+    // Animate tags staggered pop scale
+    const tags = tagsContainer.children
+    if (tags.length) {
+      gsap.fromTo(tags,
+        { scale: 0.8, opacity: 0, y: 10 },
+        { 
+          scale: 1, 
+          opacity: 1, 
+          y: 0, 
+          duration: 0.45, 
+          stagger: 0.05, 
+          ease: 'back.out(1.7)',
+          delay: 0.1
+        }
+      )
     }
   }
-})
+}
 
 onMounted(() => {
   scrollCtx = gsap.context(() => {
@@ -172,14 +220,14 @@ onUnmounted(() => {
             <!-- Chevron Right (Rotated when active) -->
             <ChevronRight 
               class="w-6 h-6 fill-current text-black/60 group-hover:text-black transition-transform duration-300"
-              :class="[activeIndex === index ? 'rotate-90 text-[var(--color-primary)]' : '']"
+              :class="[isOpen(index) ? 'rotate-90 text-[var(--color-primary)]' : '']"
             />
           </button>
           
           <!-- Accordion Content (Animated height using CSS Grid) -->
           <div 
             class="grid transition-[grid-template-rows] duration-350 ease-in-out"
-            :class="[activeIndex === index ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]']"
+            :class="[isOpen(index) ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]']"
           >
             <div class="overflow-hidden">
               <div class="pb-8 md:pb-10 pl-14 text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed">

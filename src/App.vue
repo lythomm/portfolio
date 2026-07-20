@@ -35,11 +35,21 @@ onMounted(() => {
   requestAnimationFrame(raf)
 })
 
-// Reset scroll instantly on page change
+// Reset scroll instantly on page change and refresh GSAP ScrollTriggers
 watch(() => route.path, () => {
   if (window.lenis) {
     window.lenis.scrollTo(0, { immediate: true })
   }
+  
+  // Wait for the slide-up page transition (1.5s) to fully finish, then refresh ScrollTrigger & Lenis sizes
+  setTimeout(() => {
+    import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+      ScrollTrigger.refresh()
+    })
+    if (window.lenis) {
+      window.lenis.resize()
+    }
+  }, 1600)
 })
 
 onUnmounted(() => {
