@@ -117,7 +117,11 @@ const playEntrance = () => {
 }
 
 onMounted(() => {
-  window.addEventListener('preloader-complete', playEntrance)
+  if (!document.getElementById('preloader')) {
+    playEntrance()
+  } else {
+    window.addEventListener('preloader-complete', playEntrance, { once: true })
+  }
 })
 
 onUnmounted(() => {

@@ -60,7 +60,7 @@ onMounted(async () => {
           u_image: img,
           u_colorFront: getShaderColorFromString('#121212'),
           u_colorBack: getShaderColorFromString('#f4f4f3'),
-          u_size: 0.25,
+          u_size: 0.4,
           u_grid: 0, // square grid
           u_radius: 1.5,
           u_contrast: 0.8,
@@ -87,6 +87,26 @@ onMounted(async () => {
 
   // Create GSAP Context for easy cleanup
   ctx = gsap.context(() => {
+    // ── Entrance Animation for the 3 blocks (staggered curtain reveal) ──
+    const curtains = gsap.utils.toArray('#philosophy .philosophy-curtain')
+    gsap.fromTo(curtains,
+      {
+        scaleY: 1
+      },
+      {
+        scaleY: 0,
+        duration: 1.4,
+        stagger: 0.3, // Stagger delay: one after another
+        ease: 'power3.inOut',
+        scrollTrigger: {
+          trigger: '#philosophy .grid',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    )
+
+    // ── Parallax effect on shaders ──
     containerRefs.value.forEach((container) => {
       if (!container) return
 
@@ -162,12 +182,15 @@ onUnmounted(() => {
           <!-- Overlay gradient to ensure visibility at the bottom -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-70 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"></div>
 
+          <!-- Curtain reveal overlay -->
+          <div class="philosophy-curtain absolute inset-0 bg-[var(--color-primary)] origin-top z-10 pointer-events-none"></div>
+
           <!-- Bottom sliding panel -->
           <div 
             class="absolute bottom-0 left-0 right-0 bg-[var(--color-surface)] p-6 transition-transform duration-500 ease-out translate-y-[calc(100%-80px)] group-hover:translate-y-0 flex flex-col justify-start border-t border-[var(--color-border)] max-h-full overflow-y-auto"
           >
             <!-- Panel Header (Always visible at the top of the panel) -->
-            <div class="mb-4 flex flex-col justify-center h-[32px]">
+            <div class="mb-4 flex flex-col justify-center">
               <span class="text-xs uppercase font-semibold tracking-wider text-[var(--color-text-muted)] leading-none mb-1">
                 {{ principle.subtitle }}
               </span>
@@ -176,13 +199,9 @@ onUnmounted(() => {
               </h4>
             </div>
 
-            <!-- Content revealed on hover -->
-            <div class="space-y-4 pt-4">
-              <!-- Description (Combined single paragraph) -->
               <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
                 {{ principle.description }}
               </p>
-            </div>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ import { projects } from '../data/projects'
           class="flex flex-col group cursor-pointer text-left"
         >
           <!-- Mockup Image Container (square aspect ratio) -->
-          <div class="w-full aspect-square overflow-hidden bg-zinc-900 rounded-lg border border-zinc-800/80 shadow-2xl relative">
+          <div class="w-full aspect-square overflow-hidden bg-zinc-900 rounded-md border border-zinc-800/80 shadow-2xl relative">
             <img 
               :src="project.image" 
               :alt="project.title" 
