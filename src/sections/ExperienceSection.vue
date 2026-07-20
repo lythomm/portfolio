@@ -1,25 +1,30 @@
 <script setup>
 const experiences = [
   {
-    type: 'work',
-    period: '2022 - Présent',
-    role: 'Développeur Frontend Senior',
-    organization: 'Tech Innovations Inc.',
-    description: 'Encadrement d\'une équipe de 4 développeurs frontend. Architecture et refonte de la plateforme SaaS principale avec Vue 3 et Tailwind, améliorant le temps de chargement de 40 %.'
-  },
-  {
-    type: 'work',
-    period: '2019 - 2022',
-    role: 'Développeur Frontend',
-    organization: 'Creative Digital Agency',
-    description: 'Développement de plus de 20 sites web interactifs pour des clients de premier plan. Intégration d\'animations complexes et designs adaptatifs.'
-  },
-  {
-    type: 'education',
+    phase: 'Bases & Apprentissages',
     period: '2015 - 2019',
-    role: 'Licence en Informatique',
-    organization: 'University of Technology',
-    description: 'Spécialisation dans les principes du génie logiciel, les algorithmes et l\'interaction homme-machine.'
+    bullets: [
+      "Développement d'un intérêt marqué pour le <strong>storytelling visuel</strong> et l'<strong>expérience utilisateur</strong>, menant à mes premiers projets en freelance.",
+      "Étude des <strong>principes UI/UX</strong>, de la <strong>typographie</strong> et du <strong>design d'interaction</strong> lors de ma Licence en Informatique, axée sur les expériences numériques centrées sur l'humain."
+    ]
+  },
+  {
+    phase: "Entrée dans l'Industrie",
+    period: '2019 - 2022',
+    bullets: [
+      "Collaboration étroite avec des <strong>startups et entrepreneurs</strong> au sein de Creative Digital Agency pour aider les marques à bâtir une présence en ligne convaincante.",
+      "Direction du <strong>rebranding</strong> et de la <strong>refonte de sites web</strong> pour des entreprises souhaitant moderniser et optimiser leur empreinte numérique.",
+      "Développement d'une expertise approfondie en <strong>JavaScript, Figma et intégration d'animations complexes</strong> pour concevoir des interfaces performantes et fluides."
+    ]
+  },
+  {
+    phase: "Collaborations d'Envergure",
+    period: '2022 - Présent',
+    bullets: [
+      "Partenariat direct avec des <strong>agences, startups et marques d'envergure</strong> chez Tech Innovations Inc., livrant des solutions de conception à travers diverses industries.",
+      "Conception et développement de <strong>sites web axés sur la conversion</strong> et d'<strong>expériences UI/UX intuitives</strong> pour des plateformes SaaS, marques e-commerce et produits digitaux.",
+      "Encadrement d'une <strong>équipe de 4 développeurs frontend</strong> et optimisation des performances (temps de chargement amélioré de 40% sur la plateforme principale)."
+    ]
   }
 ]
 </script>
@@ -27,59 +32,49 @@ const experiences = [
 <template>
   <section id="experience" class="py-24 bg-[var(--color-background)]">
     <div class="mx-section-default">
-      <div class="text-center mb-16">
-        <h2>// 4 Parcours</h2>
-        <h3 class="text-3xl md:text-5xl font-bold mt-2 mb-4">
-          Parcours & Formations
+      
+      <!-- Header -->
+      <div class="text-center mb-24 flex flex-col items-center">
+        <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] font-mono mb-4">// 4 Parcours</h2>
+        <h3 class="text-4xl md:text-6xl font-extrabold uppercase font-display text-[var(--color-text)] tracking-[0.05em] leading-none mb-6">
+          Moments Clés
         </h3>
-        <p class="text-lg text-[var(--color-text-muted)]">
-          Mon parcours professionnel et mon cursus académique.
+        <p class="text-base md:text-lg text-[var(--color-text-muted)] max-w-xl font-sans leading-relaxed">
+          Moments clés, projets et rôles qui ont façonné mon parcours et mon approche du design au fil des ans.
         </p>
       </div>
 
-      <!-- Experience Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div
-          v-for="(item, index) in experiences"
+      <!-- Highlights List -->
+      <div class="w-full flex flex-col space-y-16 md:space-y-24">
+        <div 
+          v-for="(item, index) in experiences" 
           :key="index"
-          class="group relative p-7 md:p-9 rounded-[var(--radius-xl)] bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/20 transition-all duration-300 cursor-default"
-          :class="index === 0 ? 'md:col-span-2' : ''"
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
         >
-          <!-- Top row: tag + period -->
-          <div class="flex items-center justify-between mb-6">
-            <span class="text-[11px] font-medium uppercase tracking-widest px-3 py-1 rounded-full border"
-              :class="item.type === 'work'
-                ? 'border-[var(--color-primary)]/20 text-[var(--color-primary)]'
-                : 'border-[var(--color-text-muted)]/30 text-[var(--color-text-muted)]'"
-            >
-              {{ item.type === 'work' ? 'Expérience' : 'Formation' }}
-            </span>
-            <span class="text-xs font-medium text-[var(--color-text-muted)] uppercase tracking-wider">
+          <!-- Left Column -->
+          <div class="flex flex-col justify-start">
+            <h4 class="text-xl md:text-2xl font-bold font-display text-[var(--color-primary)] tracking-tight leading-tight">
+              {{ item.phase }}
+            </h4>
+            <span class="text-xs font-mono text-[var(--color-text-muted)] uppercase tracking-wider mt-2">
               {{ item.period }}
             </span>
           </div>
 
-          <!-- Role -->
-          <h4 class="text-2xl md:text-3xl font-bold text-[var(--color-primary)] leading-tight mb-2 group-hover:tracking-[-0.01em] transition-all duration-300">
-            {{ item.role }}
-          </h4>
-
-          <!-- Organization -->
-          <p class="text-sm font-medium text-[var(--color-text-muted)] mb-4">
-            {{ item.organization }}
-          </p>
-
-          <!-- Description -->
-          <p class="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-xl">
-            {{ item.description }}
-          </p>
-
-          <!-- Decorative index -->
-          <span class="absolute bottom-5 right-7 md:bottom-7 md:right-9 text-[80px] md:text-[100px] font-bold leading-none text-[var(--color-primary)]/[0.03] group-hover:text-[var(--color-primary)]/[0.07] transition-all duration-500 select-none pointer-events-none">
-            {{ String(index + 1).padStart(2, '0') }}
-          </span>
+          <!-- Right Column -->
+          <div class="flex flex-col space-y-4 md:space-y-6">
+            <div 
+              v-for="(bullet, bIndex) in item.bullets" 
+              :key="bIndex"
+              class="flex items-start gap-4 text-sm md:text-base text-[var(--color-text-muted)] leading-relaxed"
+            >
+              <span class="text-[var(--color-primary)] mt-1.5 text-[8px] select-none">▪</span>
+              <span v-html="bullet"></span>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>

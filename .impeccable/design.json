@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-20T12:20:00Z",
+  "title": "Design System: Portfolio Thomas",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Charcoal",
+        "canonical": "oklch(14.36% 0 0)",
+        "tonalRamp": ["#121212", "#1f1f1f", "#333333", "#4d4d4d", "#737373", "#999999", "#cccccc", "#e5e5e5"]
+      },
+      "primary-hover": {
+        "role": "primary-hover",
+        "displayName": "Charcoal Hover",
+        "canonical": "oklch(22.8% 0 0)",
+        "tonalRamp": ["#191919", "#262626", "#3d3d3d", "#5c5c5c", "#7a7a7a", "#999999", "#c2c2c2", "#e0e0e0"]
+      },
+      "neutral-bg": {
+        "role": "neutral-bg",
+        "displayName": "Warm Chalk",
+        "canonical": "oklch(96.34% 0.003 76.2)",
+        "tonalRamp": ["#1d1d1c", "#393937", "#5a5a57", "#80807b", "#a7a7a3", "#cdcdc9", "#ebebeb", "#f4f4f3"]
+      },
+      "surface": {
+        "role": "surface",
+        "displayName": "Clean Paper",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": ["#1a1a1a", "#333333", "#4d4d4d", "#666666", "#999999", "#cccccc", "#e6e6e6", "#ffffff"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Clay Gray",
+        "canonical": "oklch(43.83% 0.002 76.2)",
+        "tonalRamp": ["#121212", "#262626", "#3e3e3e", "#5a5a5a", "#7e7e7e", "#a3a3a3", "#c7c7c7", "#ebebeb"]
+      },
+      "border": {
+        "role": "border",
+        "displayName": "Clay Border",
+        "canonical": "oklch(89.5% 0.002 76.2)",
+        "tonalRamp": ["#2e2e2e", "#4d4d4d", "#737373", "#999999", "#bcbcbb", "#d0d0cf", "#e0e0df", "#f0f0ef"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Title (Syne)",
+        "purpose": "Hero H1 headlines and massive punchy intro statements."
+      },
+      "body": {
+        "displayName": "Body Sans (DM Sans)",
+        "purpose": "All prose paragraphs, descriptions, list items, and descriptions."
+      },
+      "label": {
+        "displayName": "Label Mono (Monospace)",
+        "purpose": "Section kickers, technical details, tech tags, and dates."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-card",
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)",
+        "purpose": "Micro-shadow for interactive depth on cards and primary buttons."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "purpose": "Standard transitions for active states and links hover."
+      },
+      {
+        "name": "menu-slide",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Full-screen overlay slide down easing."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard action button for primary CTAs.",
+      "html": "<button class=\"ds-btn-primary\">Découvrir mon travail</button>",
+      "css": ".ds-btn-primary { background: #121212; color: #ffffff; padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05); } .ds-btn-primary:hover { background: #262626; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost or subtle button for secondary choices.",
+      "html": "<button class=\"ds-btn-secondary\">Me contacter</button>",
+      "css": ".ds-btn-secondary { background: #ffffff; color: #121212; padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; } .ds-btn-secondary:hover { background: #e0e0df; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Clean, flat grid cards showcasing personal works.",
+      "html": "<div class=\"ds-card\"><h4 class=\"ds-card-title\">Horizon</h4><p class=\"ds-card-text\">Outil de productivité minimaliste tout-en-un conçu spécifiquement pour les créateurs de contenu indépendants.</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e0e0df; border-radius: 12px; padding: 24px; font-family: 'DM Sans', sans-serif; } .ds-card-title { font-family: 'Syne', sans-serif; font-weight: 800; text-transform: uppercase; margin: 0 0 8px 0; color: #121212; font-size: 1.25rem; } .ds-card-text { color: #5a5a5a; font-size: 1rem; margin: 0; line-height: 1.5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le Brutisme Élégant",
+    "overview": "Ce système de design allie la force graphique du brutisme (polices massives et imposantes, contrastes marqués, structure industrielle évidente) à une esthétique épurée, cinétique et interactive. Les mises en page exploitent de grands espaces vides pour structurer les contenus et attirer le regard sur des détails de réalisation soignés. Le mouvement n'est pas un artifice décoratif mais un guide de lecture (révélation de texte progressive au défilement, transitions fluides Lenis).",
+    "keyCharacteristics": [
+      "Typographies massives en Syne pour les titres et éléments forts.",
+      "Trame géométrique et bordures fines pour découper l'espace sans l'alourdir.",
+      "Mouvement cinétique fluide intégré aux interactions clés (parallaxe, scroll-reveal)."
+    ],
+    "rules": [
+      {
+        "name": "The Restrained Contrast Rule",
+        "body": "Les couleurs d'accentuation vives sont proscrites. L'impact visuel repose entièrement sur les contrastes forts entre Charcoal et Warm Chalk/Clean Paper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Display Letter-Spacing Rule",
+        "body": "Les titres massifs en Syne doivent conserver un ajustement serré sans pour autant chevaucher les lettres. L'espacement (letter-spacing) ne doit pas descendre sous -0.03em pour conserver une lisibilité impeccable.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Les ombres portées douces ou floues à but décoratif sont interdites. Les cartes et conteneurs reposent sur des aplats Clean Paper entourés d'une bordure fine de 1px en Clay Border. Une ombre discrète et courte (shadow-card) est autorisée uniquement pour marquer le relief au survol ou sur les boutons interactifs principaux.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do limiter l'utilisation de la police Syne aux grands titres et slogans à fort impact visuel.",
+      "Do séparer les sections à l'aide de bordures géométriques de 1px (#e0e0df) pour affirmer le style industriel structuré.",
+      "Do animer les révélations de texte de manière progressive et naturelle via le défilement."
+    ],
+    "donts": [
+      "Don't utiliser des dégradés de couleurs néons ou multicolores (violet, rose, cyan) typiques des designs AI standard.",
+      "Don't utiliser des arrondis disproportionnés (radius > 16px) sur les grands blocs ou cartes pour éviter l'effet enfantin.",
+      "Don't combiner bordure physique et ombre portée diffuse large (ghost-card) sur un même élément."
+    ]
+  }
+}
