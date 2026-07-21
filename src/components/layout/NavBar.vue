@@ -191,10 +191,13 @@ onUnmounted(() => {
         <router-link 
           to="/#top" 
           @click="closeMenu"
-          class="text-xl font-bold tracking-tight relative z-[60] transition-colors duration-300"
-          :class="isMenuOpen ? 'text-black' : isHeroVisible ? 'text-white' : 'text-[var(--color-primary)]'"
+          class="relative z-[60] flex items-center gap-2.5 group"
         >
-          Thomas.dev
+          <img 
+            src="/profile-avatar.png" 
+            alt="Thomas" 
+            class="size-11 rounded-full object-cover border-2 border-white/20 shadow-sm transition-transform duration-500 ease-in-out group-hover:rotate-360"
+          />
         </router-link>
 
         <!-- Menu Toggle Button -->
