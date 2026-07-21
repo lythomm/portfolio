@@ -182,7 +182,7 @@ onUnmounted(() => {
     <div class="mx-section-default">
       <div class="text-center mx-auto mb-16">
         <h2>// Services</h2>
-        <h3 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+        <h3 class="text-2xl md:text-4xl font-bold mt-2 mb-4">
           Ce que je peux faire pour vous
         </h3>
         <p class="text-lg text-[var(--color-text-muted)]">
@@ -212,7 +212,7 @@ onUnmounted(() => {
                   class="size-6 fill-current text-[var(--color-primary)]" 
                 />
               </div>
-              <span class="text-xl md:text-2xl font-bold text-[var(--color-primary)] transition-colors duration-200">
+              <span class="text-xl md:text-2xl font-display font-bold text-[var(--color-primary)] transition-colors duration-200">
                 {{ service.title }}
               </span>
             </div>

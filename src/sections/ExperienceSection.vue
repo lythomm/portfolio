@@ -24,11 +24,12 @@ const experiences = [
     ]
   },
   {
-    phase: "Aujourd'hui & Freelance",
+    phase: "Aujourd'hui",
     period: '2022 - 2026',
     bullets: [
       "<strong>Développeur Fullstack @ BedBoat</strong> (2022 - 2026) : Audit technique, restructuration globale de la plateforme pour la performance/scalabilité et développement du système de réservation Stripe.",
-      "Optimisation opérationnelle via des automatisations <strong>Make</strong> et introduction structurante de la culture <strong>Agile</strong> (Sprints, Daily, Rétrospectives)."
+      "Optimisation opérationnelle via des automatisations <strong>Make</strong> et introduction structurante de la culture <strong>Agile</strong> (Sprints, Daily, Rétrospectives).",
+      "<strong>Développeur Freelance</strong> : Création de sites internets et applications web pour des clients."
     ]
   }
 ]

@@ -2,9 +2,7 @@
 
 @theme {
   --color-primary: #121212;
-  /* charcoal black */
-  --color-primary-hover: #262626;
-  /* lighter charcoal */
+  --color-primary-hover: #0000b8;
   --color-background: #f4f4f3;
   /* warm off-white from screenshot */
   --color-surface: #ffffff;

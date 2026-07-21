@@ -56,9 +56,9 @@ onMounted(() => {
         opacity: 1,
         ease: 'power3.in',
         scrollTrigger: {
-          trigger: 'main',
-          start: 'bottom bottom', // starts when main's bottom reaches viewport bottom (footer begins to reveal)
-          end: 'max',            // ends when scrolled to the very bottom of the page
+          trigger: animContainerRef.value,
+          start: 'top bottom',   // starts when footer top enters viewport bottom
+          end: 'top 40%',        // fully visible when footer top reaches 40% of viewport
           scrub: true
         }
       }

@@ -150,7 +150,7 @@ onUnmounted(() => {
       <!-- Section Header -->
       <div class="text-center mx-auto mb-16 max-w-3xl">
         <h2>// Philosophie</h2>
-        <h3 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+        <h3 class="text-2xl md:text-4xl font-bold mt-2 mb-4">
           Comment je conçois mes projets
         </h3>
         <p class="text-lg text-[var(--color-text-muted)]">

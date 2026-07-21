@@ -1,30 +1,32 @@
 export const projects = [
   {
-    id: 'horizon',
-    title: 'Horizon',
-    subtitle: 'Outil de productivité pour les créateurs',
-    description: 'Un outil de productivité minimaliste tout-en-un conçu spécifiquement pour les créateurs de contenu indépendants.',
-    image: '/project-horizon.png',
-    presentation: 'Horizon centralise la planification de contenu, la gestion des tâches et le suivi analytique dans un tableau de bord épuré. Il élimine le bruit pour permettre aux créateurs de se concentrer sur ce qui compte vraiment : la création de valeur et le développement de leur audience sans s\'éparpiller.',
-    technologies: ['Vue.js 3', 'Vite', 'Tailwind CSS', 'Pinia', 'Supabase'],
-    problemsSolved: 'Les créateurs de contenu perdent en moyenne 30% de leur temps à naviguer entre différentes applications (calendrier, gestionnaire de tâches, outils d\'analyse). Horizon résout ce problème en unifiant le workflow créatif au sein d\'un seul espace cohérent, doté d\'une prévisualisation en temps réel des posts planifiés.',
+    id: 'bailconnect',
+    title: 'BailConnect',
+    subtitle: 'Plateforme SaaS de gestion locative automatisée',
+    description: 'Une plateforme SaaS qui permet aux propriétaires bailleurs de centraliser, trier et automatiser le traitement des candidatures de locataires pour leurs biens en location.',
+    image: '/project-bailconnect.png',
+    presentation: 'BailConnect démocratise les outils de gestion locative professionnels en offrant aux propriétaires particuliers une solution moderne et abordable. Créez des campagnes de location (manuellement ou par scraping IA d\'annonces existantes), recevez les candidatures sur une page publique dédiée, gérez les visites avec réservation automatisée, et suivez tout depuis un dashboard interactif — de la publication de l\'annonce à la signature du bail.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS v4', 'Convex', 'Stripe', 'Firecrawl', 'Twilio', 'Resend', 'Playwright'],
+    problemsSolved: 'En France, les candidatures locatives arrivent de partout (emails, plateformes, SMS) sans centralisation, le tri se fait manuellement par tableur, et l\'organisation des visites est un casse-tête logistique. BailConnect résout ces problèmes avec une page de candidature unique par annonce, un tableau interactif avec filtres et tri, des créneaux de visite en ligne avec réservation automatisée, du scraping IA pour extraire les annonces, et des notifications automatiques (email + SMS) avec digest quotidien paramétrable. Modèle freemium accessible dès 0 €.',
     gallery: [
-      '/project-horizon-detail.png',
-      '/project-horizon.png'
-    ]
+      '/bailconnect-dashboard.png',
+      '/bailconnect-calendar.png'
+    ],
+    projectUrl: 'https://www.bailconnect.fr/'
   },
   {
-    id: 'vitalo',
-    title: 'Vitalo',
-    subtitle: 'Template de coaching personnel & fitness',
-    description: 'Une plateforme moderne et interactive de coaching de fitness et de nutrition personnalisés.',
-    image: '/project-vitalo.png',
-    presentation: 'Vitalo aide les coachs sportifs à proposer des programmes de fitness et des plans de nutrition interactifs et sur mesure à leurs clients. La plateforme intègre un suivi des performances en temps réel et un planificateur de repas dynamique.',
-    technologies: ['Vue.js 3', 'Tailwind CSS', 'Firebase', 'Chart.js', 'Lenis'],
-    problemsSolved: 'Suivre l\'adhérence des clients aux programmes de fitness à distance est un défi majeur pour les coachs. Vitalo résout cela avec un tableau de bord synchronisé en temps réel, permettant aux coachs d\'ajuster instantanément les charges d\'entraînement et les apports caloriques en fonction des retours d\'effort de l\'utilisateur.',
+    id: 'scriblio',
+    title: 'Scriblio',
+    subtitle: 'App de productivité vocale pilotée par l\'IA',
+    description: 'Une application web de productivité personnelle qui transforme la voix en notes structurées et mind maps en temps réel grâce à l\'intelligence artificielle.',
+    image: '/project-scriblio.png',
+    projectUrl: 'https://scriblio-ai.vercel.app/',
+    presentation: 'Scriblio transforme la voix en connaissance structurée : notes, mind maps, et mémoire interrogeable. Tout cela, en temps réel et sans friction. Enregistrez un audio : l\'IA transcrit, nettoie, synthétise et catégorise automatiquement. Parlez naturellement et une mind map se construit en direct sur un canvas interactif infini. Interrogez tout votre historique en langage naturel grâce à la recherche sémantique vectorielle (RAG).',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS v4', 'Convex', 'React Flow', 'Gemini Live (WebRTC)', 'Groq Whisper', 'Groq LLM (Llama)', 'RAG / Vector Search'],
+    problemsSolved: 'Capturer une idée au moment où elle surgit reste un point de friction majeur : taper crée une barrière cognitive et les mémos vocaux classiques stockent un audio brut inutilisable. Scriblio élimine la friction du clavier en transformant la voix en contenu structuré instantanément, construit des mind maps vocales en temps réel pour ne rien perdre du brainstorming, et permet de retrouver n\'importe quelle information passée via recherche sémantique en langage naturel (RAG). L\'architecture WebRTC + Gemini Live offre une latence < 800ms pour une expérience conversationnelle fluide.',
     gallery: [
-      '/project-vitalo-detail.png',
-      '/project-vitalo.png'
+      '/scriblio-RAG.png',
+      '/scriblio-notes.png'
     ]
   },
   {

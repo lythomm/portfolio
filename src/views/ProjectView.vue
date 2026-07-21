@@ -66,11 +66,11 @@ onMounted(() => {
       </button>
 
       <!-- Project Header -->
-      <header class="mb-24 text-center">
-        <h1 class="text-4xl md:text-7xl font-bold font-display uppercase tracking-tight text-[var(--color-primary)] mb-6">
+      <header class="mb-12 md:mb-24 text-center">
+        <h1 class="text-2xl md:text-7xl font-bold font-display uppercase tracking-tight text-[var(--color-primary)] mb-6">
           {{ project.title }}
         </h1>
-        <p class="text-lg md:text-xl font-light text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+        <p class="text-md md:text-xl font-light text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
           {{ project.description }}
         </p>
       </header>
@@ -101,7 +101,7 @@ onMounted(() => {
             </p>
             <div class="pt-2">
               <BaseButton 
-                href="https://github.com" 
+                :href="project.projectUrl" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 variant="primary"

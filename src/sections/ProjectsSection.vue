@@ -12,7 +12,7 @@ import { projects } from '../data/projects'
         <h2 class="text-zinc-500 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] mb-4">
           // Projets récents
         </h2>
-        <h3 class="text-4xl md:text-5xl font-bold font-display uppercase tracking-tight text-white">
+        <h3 class="text-2xl md:text-5xl font-bold font-display uppercase tracking-tight text-white">
           Projets sélectionnés
         </h3>
       </div>

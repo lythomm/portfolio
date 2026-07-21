@@ -62,7 +62,7 @@ onUnmounted(() => {
   <section id="about" class="py-24 bg-[var(--color-surface)]">
     <div class="mx-section-default text-center flex flex-col items-center">
       <h2>// À propos</h2>
-      <div class="text-4xl md:text-7xl tracking-[-0.03em] text-[var(--color-text-muted)] leading-[1] scroll-reveal-container font-display">
+      <div class="text-3xl md:text-7xl tracking-[-0.03em] text-[var(--color-text-muted)] leading-[1] scroll-reveal-container font-display">
         <p>
           <template v-for="(word, index) in words" :key="index">
             <span 
